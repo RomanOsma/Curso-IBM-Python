@@ -47,11 +47,77 @@ Instalar Django y otras dependencias:
 
 Configurar la base de datos: 
 
-python manage.py makemigrations  
-python manage.py migrate  
-python manage.py createsuperuser  
-python manage.py runserver  
-pip freeze > requirements.txt  
+	python manage.py makemigrations  
+	python manage.py migrate  
+	python manage.py createsuperuser  
+	python manage.py runserver  
+	pip freeze > requirements.txt  
+
+Comandos Faltantes Aquí hay algunos comandos adicionales que podrían ser útiles: 
+
+Descripción: Abre una consola interactiva de Django. 
+	
+	python manage.py shell: 
+
+Descripción: Crea un superusuario para acceder al panel de administración de Django. 
+
+ 	python manage.py createsuperuser: 
+
+
+Descripción: Recopila todos los archivos estáticos en una carpeta para producción. 
+ 
+	python manage.py collectstatic: 
+
+
+Descripción: Ejecuta las pruebas unitarias del proyecto. 
+ 
+	python manage.py test: 
+
+Ver los superusuarios existentes 
+
+	python manage.py shell 
+
+
+Después Ejecuta 
+
+	from django.contrib.auth.models import User 
+	User.objects.filter(is_superuser=True) 
+
+	
+
+Cambiar la contraseña de un superusuario existente 
+Si olvidaste la contraseña, puedes cambiarla con: 
+
+	python manage.py changepassword nombre_usuario 
+	from django.contrib.auth.models import User 
+	user = User.objects.get(username='nombre_usuario') 
+	user.set_password('nueva_contraseña') 
+	user.save() 
+
+Registrar tus modelos en el Admin 
+Para que tus modelos Cliente y Factura aparezcan en el panel de administración, debes registrarlos en el archivo admin.py de tu aplicación: 
+
+	from django.contrib import admin 
+	from .models import Cliente, Factura 
+ 
+# Registrando los modelos básicos 
+	
+	admin.site.register(Cliente) 
+	admin.site.register(Factura) 
+
+ 
+# O puedes personalizar la visualización: 
+# @admin.register(Cliente) 
+# class ClienteAdmin(admin.ModelAdmin): 
+#     list_display = ('nombre', 'apellidos', 'rfc', 'fecha_nacimiento', 'activo') 
+#     search_fields = ('nombre', 'apellidos', 'rfc') 
+#     list_filter = ('activo',) 
+ 
+# @admin.register(Factura) 
+# class FacturaAdmin(admin.ModelAdmin): 
+#     list_display = ('cliente', 'importe', 'pagada') 
+#     list_filter = ('pagada',) 
+
 
 Resumen Orden recomendado:  
 Crear proyecto → Crear aplicación → Configurar entorno virtual → Instalar dependencias → Configurar base de datos → Iniciar servidor. 
@@ -59,16 +125,21 @@ Crear proyecto → Crear aplicación → Configurar entorno virtual → Instalar
 Pruebas Test
 
 Unittest :
-python -m unittest testcompleto.py
+
+	python -m unittest testcompleto.py
 
 Doctest :
-python -m doctest testcompleto.py
+
+	python -m doctest testcompleto.py
 
 PyTest :
-pytest testcompleto.py
+	
+	pytest testcompleto.py
 
 Nose2 :
-nose2 testcompleto
+	
+	nose2 testcompleto
 
 Robot:
-robot testcompleto.robot
+	
+	robot testcompleto.robot
