@@ -1,0 +1,122 @@
+{% comment %}
+# templates/crear_cliente.html
+# Guarda este archivo en la carpeta templates/ de tu aplicación
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            width: auto;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .factura-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear Nuevo Cliente</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+            {{ form.nombre }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.apellidos.id_for_label }}">Apellidos:</label>
+            {{ form.apellidos }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.rfc.id_for_label }}">RFC:</label>
+            {{ form.rfc }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.fecha_nacimiento.id_for_label }}">Fecha de Nacimiento:</label>
+            {{ form.fecha_nacimiento }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.activo.id_for_label }}">
+                {{ form.activo }}
+                Cliente Activo
+            </label>
+        </div>
+        
+        <div class="factura-section">
+            <h3>Información de Factura</h3>
+            
+            <div class="form-group">
+                <label for="{{ form.crear_factura.id_for_label }}">
+                    {{ form.crear_factura }}
+                    Crear factura para este cliente
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.importe_factura.id_for_label }}">Importe de la Factura:</label>
+                {{ form.importe_factura }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.factura_pagada.id_for_label }}">
+                    {{ form.factura_pagada }}
+                    Factura Pagada
+                </label>
+            </div>
+        </div>
+        
+        <button type="submit">Crear Cliente</button>
+    </form>
+</body>
+</html>
