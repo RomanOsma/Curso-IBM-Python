@@ -1,0 +1,28 @@
+Una función que puede sumar dos o tres números dependiendo de cuántos argumentos reciba.
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimorfismo con AD-HOC</title>
+</head>
+
+<body>
+    <script>
+        function sumar(a, b, c) {
+            if (c === undefined) {
+                return a + b;
+            } else {
+                return a + b + c;
+            }
+        }
+
+        console.log(sumar(2, 3));    // 5
+        console.log(sumar(2, 3, 4)); // 9
+
+
+    </script>
+</body>
+
+</html>

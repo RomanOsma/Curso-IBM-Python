@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Escribe una función mezclar que pueda tomar dos o tres parámetros. 
+        // Si se pasan dos parámetros, la función debe concatenarlos. 
+        // Si se pasan tres parámetros, la función debe sumar el primero y el segundo 
+        // y luego concatenar el tercero.
+
+
+        function mezclar(a, b, c) {
+            if (c !== undefined) {
+                return (a + b).toString() + c;
+            } else {
+                return a.toString() + b.toString();
+            }
+        }
+
+        console.log(mezclar('Hola ', 'Mundo')); // "Hola Mundo"
+        console.log(mezclar(5, 10, ' es un número')); // "15 es un número"
+
+    </script>
+</body>
+
+</html>

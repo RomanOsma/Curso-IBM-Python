@@ -1,0 +1,64 @@
+<!-- Hazme un script que cree la clase "Coche" con tres métodos y tres atributos, 
+Uno de ellos será "color" e irá privado. Uno de los métodos tiene que ser un 
+getter y otro un setter, y en él se le preguntará al usuario por un prompt que 
+elija un color entre tres opciones. 
+El método debe cambiar el color delcoche según la opción elegida o sacar un 
+mensaje de error y volver a preguntar al usuario en el caso de que el color 
+elegido no está entre las tres opciones. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters y Setters</title>
+</head>
+
+<body>
+    <script>
+        class Coche {
+            #color;
+            
+
+            constructor(marca, modelo) {
+                this.#color = 'blanco';
+                this.marca = marca;
+                this.modelo = modelo;
+            }
+
+            get color() {
+                return this.#color;
+            }
+
+            set color(color) {
+                const coloresPermitidos = ['rojo', 'azul', 'verde'];
+                while (!coloresPermitidos.includes(color)) {
+                    console.log('El color elegido no es válido. Por favor, elige entre rojo, azul y verde.');
+                    color = prompt("Elige un color entre rojo, azul y verde:");
+                }
+                this.#color = color;
+            }
+
+            mostrarCoche() {
+                console.log(`Este coche es un ${this.marca} ${this.modelo} de color ${this.#color}`);
+            }
+        }
+
+        let coche1 = new Coche('Toyota', 'Corolla');
+
+        coche1.color = prompt("Elige un color entre rojo, azul y verde:");
+        console.log(coche1.color); // Imprime: rojo
+        coche1.mostrarCoche(); // Imprime: Este coche es un Toyota Corolla de color rojo
+
+        let coche2 = new Coche('Honda', 'Civic');
+        coche2.color = prompt("Elige un color entre rojo, azul y verde:");
+        console.log(coche2.color); // Imprime: azul
+        coche2.mostrarCoche(); // Imprime: Este coche es un Honda Civic de color azul
+
+
+    </script>
+</body>
+
+</html>

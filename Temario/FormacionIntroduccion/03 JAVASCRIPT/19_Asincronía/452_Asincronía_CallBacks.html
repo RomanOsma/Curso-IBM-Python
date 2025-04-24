@@ -1,0 +1,28 @@
+<!-- Crea una función que realice una operación matemática 
+(suma, resta, multiplicación, división) entre dos números. 
+La operación debe ser especificada por un callback. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <script>
+        function operacionMatematica(a, b, operacionCallback) {
+            console.log(operacionCallback(a, b));
+        }
+
+        // Uso de la función
+        operacionMatematica(10, 5, function (a, b) {
+            return a + b; // Cambiar por -, *, / para otras operaciones
+        });
+
+    </script>
+</body>
+
+</html>

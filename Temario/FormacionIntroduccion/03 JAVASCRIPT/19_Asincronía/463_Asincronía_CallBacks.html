@@ -1,0 +1,38 @@
+<!-- Carga varias imágenes de forma asíncrona y utiliza callbacks para manejar su carga. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Carga de Múltiples Imágenes con Callback</title>
+</head>
+
+<body>
+    <div id="imageGallery"></div>
+    <script>
+        const imagesUrls = [
+            'https://via.placeholder.com/150',
+            'https://via.placeholde.com/200',
+            'https://via.placeholder.com/250'
+        ];
+
+        function loadImage(url, callback) {
+            const img = new Image();
+            img.onload = () => callback(null, img);
+            img.onerror = () => callback('Error al cargar la imagen', null);
+            img.src = url;
+        }
+
+        imagesUrls.forEach(url => {
+            loadImage(url, (error, img) => {
+                if (error) {
+                    console.error(error);
+                } else {
+                    document.getElementById('imageGallery').appendChild(img);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

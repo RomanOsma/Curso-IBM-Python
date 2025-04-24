@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compra de Libro</title>
+</head>
+<body>
+    <h1>Compra de Libro</h1>
+
+    <form id="formulario">
+        <label for="unidades">Unidades:</label><br>
+        <input type="number" id="unidades" name="unidades" min="1" value="1"><br>
+        <label for="tapaDura">Tapa dura:</label><br>
+        <input type="checkbox" id="tapaDura" name="tapaDura"><br>
+        <input type="button" value="Comprar" onclick="comprar()">
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        let libro = {
+            titulo: "1984",
+            autor: "George Orwell",
+            añoPublicacion: 1949,
+            precio: 20,
+
+            calcularAñosDesdePublicacion: function() {
+                let añoActual = new Date().getFullYear();
+                return añoActual - this.añoPublicacion;
+            },
+
+            modificarPrecioPorCantidad: function(ejemplares) {
+                if (ejemplares > 20) {
+                    this.precio *= 0.8;  // Descuento del 20%
+                } else if (ejemplares > 10) {
+                    this.precio *= 0.9;  // Descuento del 10%
+                }
+            },
+
+            precioFinal: function() {
+                return this.precio * 1.15;  // Añadir el 15% al precio del libro
+            }
+        };
+
+        function comprar() {
+            let unidades = document.getElementById("unidades").value;
+            let tapaDura = document.getElementById("tapaDura").checked;
+            let resultado = document.getElementById("resultado");
+
+            libro.modificarPrecioPorCantidad(unidades);
+            if (tapaDura) {
+                libro.precio += 3;
+            }
+
+            resultado.innerHTML = "Has comprado " + unidades + " unidad(es) del libro '" + libro.titulo +
+                "' de " + libro.autor + ".<br>" +
+                "Años desde la publicación: " + libro.calcularAñosDesdePublicacion() + "<br>" +
+                "Precio final: " + libro.precioFinal() + "€";
+        }
+    </script>
+</body>
+</html>

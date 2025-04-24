@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Filtrar y detener la búsqueda en un array:
+        // Imagina que tienes un array de números y deseas imprimir solo aquellos 
+        // que son pares. Sin embargo, si encuentras un número que es mayor que 
+        // un límite establecido, quieres detener completamente el bucle. 
+        // En este caso, usarás continue para saltar los números impares y 
+        // break para detener el bucle cuando encuentres un número mayor que el 
+        // límite.
+
+
+
+
+
+
+
+
+
+        
+
+        var numeros = [2, 4, 7, 8, 10, 12, 15, 18];
+        var limite = 15;
+        for (var i = 0; i < numeros.length; i++) {
+            if (numeros[i] > limite) {
+                console.log('Se encontró un número que supera el límite:', numeros[i]);
+                break;
+            }
+            if (numeros[i] % 2 !== 0) {
+                continue; // Salta los números impares
+            }
+            console.log('Número par:', numeros[i]);
+        }    
+    </script>
+</body>
+
+</html>

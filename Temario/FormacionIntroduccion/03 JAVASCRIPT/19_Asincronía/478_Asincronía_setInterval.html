@@ -1,0 +1,30 @@
+<!-- hacer que un elemento se muestre y oculte de forma periódica en la página, 
+creando un efecto de "parpadeo" o "flash". 
+Esto puede ser útil para llamar la atención sobre alertas o notificaciones. -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1 id="elementoParpadeante">ALERTA!!!</h1>
+    <script>
+        function parpadearElemento() {
+  const elemento = document.getElementById('elementoParpadeante');
+  if (elemento.style.display === 'none') {
+            elemento.style.display = '';
+        } else {
+            elemento.style.display = 'none';
+        }
+//   elemento.style.display = (elemento.style.display === 'none' ? '' : 'none');
+}
+
+// Hacer que el elemento parpadee cada 500 milisegundos
+setInterval(parpadearElemento, 500);
+
+    </script>
+</body>
+</html>

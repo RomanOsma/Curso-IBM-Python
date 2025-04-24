@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Crear un script que pida al usuario 4 opciones ( operación() ) y dos números 
+        // con los que trabajar.
+        // Crear 4 funciones:
+        // Opción 1: sumar.
+        // Opción 2: restar.
+        // Opción 3: multiplicar.
+        // Opción 4: dividir.
+        // Según la elección del usuario se ejecutará una de las cuatro. Mostrar resultado en pantalla
+
+       
+
+        // Definición de las funciones para las operaciones
+        function sumar(a, b) {
+            return a + b;
+        }
+
+        function restar(a, b) {
+            return a - b;
+        }
+
+        function multiplicar(a, b) {
+            return a * b;
+        }
+
+        function dividir(a, b) {
+            if (b === 0) {
+                return "Error: No se puede dividir por cero.";
+            } else {
+                return a / b;
+            }
+        }
+
+        // Solicitar al usuario que elija una operación y proporcione dos números
+        const operacion = prompt("Elige una operación (1: sumar, 2: restar, 3: multiplicar, 4: dividir):");
+        const numero1 = parseFloat(prompt("Introduce el primer número:"));
+        const numero2 = parseFloat(prompt("Introduce el segundo número:"));
+
+        // Verificar que los números sean válidos
+        if (isNaN(numero1) || isNaN(numero2)) {
+            alert("Por favor, introduce números válidos.");
+        } else {
+            // Ejecutar la operación seleccionada y mostrar el resultado
+            let resultado=0;
+            switch (operacion) {
+                case '1':
+                    resultado = sumar(numero1, numero2);
+                    break;
+                case '2':
+                    resultado = restar(numero1, numero2);
+                    break;
+                case '3':
+                    resultado = multiplicar(numero1, numero2);
+                    break;
+                case '4':
+                    resultado = dividir(numero1, numero2);
+                    break;
+                default:
+                    alert("Opción no válida. Por favor, elige una opción entre 1 y 4.");
+                    resultado = null;
+            }
+
+            if (resultado != 0) {
+                alert(`El resultado es: ${resultado}`);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

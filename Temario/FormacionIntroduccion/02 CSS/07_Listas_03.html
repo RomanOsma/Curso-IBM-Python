@@ -1,0 +1,61 @@
+<!-- 
+     *****************************************
+     *    Lista como menú de navegación      *
+     ***************************************** 
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Horizontal</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        /* La propiedad overflow: hidden; se utiliza para especificar 
+        qué hacer si el contenido de un elemento excede su tamaño de caja. 
+        Cuando se establece overflow: hidden;, el contenido que es más grande 
+        que el tamaño de la caja del elemento se ocultará. 
+        Esto significa que cualquier contenido que se desborde del elemento, 
+        ya sea horizontal o verticalmente, será recortado y no será visible, 
+        y no se proporcionarán barras de desplazamiento para ver el contenido 
+        oculto.
+        No afecta el diseño de otros elementos en la página. 
+        No expandirá el elemento padre ni causará desplazamiento de otros 
+        elementos cercanos. Simplemente oculta el contenido que desborda.
+        */
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Portafolio</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</body>
+</html>

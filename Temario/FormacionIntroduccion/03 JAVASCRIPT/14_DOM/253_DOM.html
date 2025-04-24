@@ -1,0 +1,37 @@
+
+
+<!-- Contar la cantidad de elementos de un tipo específico en 
+una lista:
+Selecciona una lista de elementos por su etiqueta.
+Utiliza la propiedad length para contar la cantidad 
+de elementos seleccionados.
+Muestra el resultado en la consola o en la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contar elementos por etiqueta</title>
+</head>
+<body>
+  <div>
+    <p>Este es un párrafo.</p>
+    <p>Este es otro párrafo.</p>
+    <span>Este es un span.</span>
+    <div>Este es un div.</div>
+  </div>
+
+  <script>
+    // Selecciona todos los elementos <p>
+    var elementos = document.getElementsByTagName("p");
+    //var elementos = document.querySelectorAll("p");
+
+    // Cuenta la cantidad de elementos seleccionados
+    var cantidadElementos = elementos.length;
+
+    // Muestra el resultado en la consola
+    console.log("Cantidad de elementos <p>: " + cantidadElementos);
+  </script>
+</body>
+</html>

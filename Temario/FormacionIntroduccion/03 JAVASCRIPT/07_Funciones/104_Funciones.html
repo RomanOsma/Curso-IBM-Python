@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Crea una función unirArrays que tome varios arrays como argumentos y 
+        // devuelva un nuevo array que sea la unión de todos ellos, sin modificar 
+        // los originales.
+
+        // Uso de "arguments": Permite acceder a todos los argumentos pasados a una 
+        // función, independientemente de la cantidad de parámetros que la función 
+        // espera. Esto es útil para funciones que pueden ser llamadas con un número 
+        // variable de argumentos.
+
+        function unirArrays() {
+            var resultado = [];
+            for (var i = 0; i < arguments.length; i++) {
+                resultado = resultado.concat(arguments[i]);
+            }
+            return resultado;
+        }
+
+        // Ejemplo de uso:
+        var array1 = [1, 2, 3];
+        var array2 = [4, 5, 6];
+        var array3 = [7, 8, 9];
+
+        var arrayUnido = unirArrays(array1, array2, array3);
+        console.log(arrayUnido); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+        //sin usar arguments
+        function unirArrays(...arrays) {
+            var resultado = [];
+            for (var i = 0; i < arrays.length; i++) {
+                resultado = resultado.concat(arrays[i]);
+            }
+            return resultado;
+        }
+
+        // Ejemplo de uso:
+        var array1 = [1, 2, 3];
+        var array2 = [4, 5, 6];
+        var array3 = [7, 8, 9];
+
+        var arrayUnido = unirArrays(array1, array2, array3);
+        console.log(arrayUnido); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    </script>
+</body>
+
+</html>

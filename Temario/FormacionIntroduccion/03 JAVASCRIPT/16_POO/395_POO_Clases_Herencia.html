@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+
+<body>
+    <script>
+
+        class Persona {
+            #nombre;
+            #edad;
+
+            constructor(nombre, edad) {
+                this.#nombre = nombre;
+                this.#edad = edad;
+            }
+
+            mostrarInformacion() {
+                console.log(`Nombre: ${this.#nombre}, Edad: ${this.#edad}`);
+            }
+
+            get nombre() {
+                return this.#nombre;
+            }
+
+            get edad() {
+                return this.#edad;
+            }
+        }
+
+        class Estudiante extends Persona {
+            #curso;
+
+            constructor(nombre, edad, curso) {
+                super(nombre, edad);
+                this.#curso = curso;
+            }
+
+            mostrarInformacion() {
+                super.mostrarInformacion();
+                console.log(`Curso: ${this.#curso}`);
+            }
+
+            get curso() {
+                return this.#curso;
+            }
+        }
+
+        class Profesor extends Persona {
+            #asignatura;
+
+            constructor(nombre, edad, asignatura) {
+                super(nombre, edad);
+                this.#asignatura = asignatura;
+            }
+
+            mostrarInformacion() {
+                super.mostrarInformacion();
+                console.log(`Asignatura: ${this.#asignatura}`);
+            }
+
+            get asignatura() {
+                return this.#asignatura;
+            }
+        }
+
+        // Ejemplos de uso
+        const estudiante = new Estudiante('Laura', 20, 'Matemáticas');
+        estudiante.mostrarInformacion();
+        // Salida esperada: 
+        // Nombre: Laura, Edad: 20
+        // Curso: Matemáticas
+
+        const profesor = new Profesor('Carlos', 45, 'Física');
+        profesor.mostrarInformacion();
+        // Salida esperada: 
+        // Nombre: Carlos, Edad: 45
+        // Asignatura: Física
+
+
+    </script>
+</body>
+
+</html>

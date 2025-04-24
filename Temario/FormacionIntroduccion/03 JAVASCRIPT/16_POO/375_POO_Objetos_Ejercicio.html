@@ -1,0 +1,110 @@
+Crear un objeto que represente el libro "1984", de George Orwell, publicado en 1949.
+
+- Añadir dos atributos manualmente, por ejemplo, tapa dura y precio.
+- método que saque por consola todos los atributos del objeto.
+- Borrar el atributo del año de publicación y volver a imprimir.
+- método que saque calcule cuantos años hace de su publicación.
+- Añadir un método que verifique si el libro es de tapa dura. Este método podría devolver
+un mensaje diferente dependiendo de si el libro es de tapa dura o no. Además, si es de
+tapa dura su precio aumenta en 3€.
+- Añadir una variable en la que se almacenerán el número de ejemplares que se van a comprar.
+- Añadir un método que modifique el precio del libro:
+- 1 ejemplar => precio
+- más de 10 ejemplares => 10% de descuento
+- más de 20 ejemplares => 20% de descuento
+
+- Añadir un método precio_Final que añada el 15% al precio del libro teniendo en
+cuenta todos los puntos anteriores:
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación y manupilación de objetos</title>
+</head>
+
+<body>
+    <script>
+        // Crear un objeto que represente el libro "1984", de George Orwell, publicado en 1949.
+        let libro = {
+            titulo: "1984",
+            autor: "George Orwell",
+            añoPublicacion: 1949,
+            tapaDura: false,
+            precio: 20,
+            ejemplares: 0,
+
+            // Añadir dos atributos manualmente, por ejemplo, tapa dura y precio.
+            añadirAtributos: function (tapaDura, precio) {
+                this.tapaDura = tapaDura;
+                this.precio = precio;
+            },
+
+            // Método que saque por consola todos los atributos del objeto.
+            mostrarAtributos: function () {
+                for (let clave in this) {
+                    if (typeof this[clave] !== 'function') {
+                        console.log(clave + ": " + this[clave]);
+                    }
+                }
+            },
+
+            // Borrar el atributo del año de publicación y volver a imprimir.
+            borrarAñoPublicacion: function () {
+                delete this.añoPublicacion;
+                this.mostrarAtributos();
+            },
+
+            // Método que saque calcule cuantos años hace de su publicación.
+            calcularAñosDesdePublicacion: function () {
+                let añoActual = new Date().getFullYear();
+                return añoActual - this.añoPublicacion;
+            },
+
+            // Añadir un método que verifique si el libro es de tapa dura. Este método podría devolver 
+            // un mensaje diferente dependiendo de si el libro es de tapa dura o no. Además, si es de 
+            // tapa dura su precio aumenta en 3€.
+            verificarTapaDura: function () {
+                if (this.tapaDura) {
+                    this.precio += 3;
+                    return "El libro es de tapa dura.";
+                } else {
+                    return "El libro no es de tapa dura.";
+                }
+            },
+
+            // Añadir una variable en la que se almacenerán el número de ejemplares que se van a comprar.
+            // Añadir un método que modifique el precio del libro:
+            //     - 1 ejemplar => precio 
+            //     - más de 10 ejemplares => 10% de descuento 
+            //     - más de 20 ejemplares => 20% de descuento 
+            modificarPrecioPorCantidad: function (ejemplares) {
+                this.ejemplares = ejemplares;
+                if (ejemplares > 20) {
+                    this.precio *= 0.8;  // Descuento del 20%
+                } else if (ejemplares > 10) {
+                    this.precio *= 0.9;  // Descuento del 10%
+                }
+            },
+
+            // Añadir un método precio_Final que añada el 15% al precio del libro teniendo en 
+            // cuenta todos los puntos anteriores:
+            precioFinal: function () {
+                return this.precio * 1.15;  // Añadir el 15% al precio del libro
+            }
+        };
+
+        // Ejemplo de uso:
+        libro.añadirAtributos(true, 20);
+        libro.mostrarAtributos();
+        libro.borrarAñoPublicacion();
+        console.log("Años desde la publicación: " + libro.calcularAñosDesdePublicacion());
+        console.log(libro.verificarTapaDura());
+        libro.modificarPrecioPorCantidad(15);
+        console.log("Precio final: " + libro.precioFinal());
+    </script>
+</body>
+
+</html>

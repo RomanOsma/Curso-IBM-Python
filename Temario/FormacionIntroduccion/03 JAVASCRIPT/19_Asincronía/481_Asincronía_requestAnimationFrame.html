@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crecimiento de Elemento</title>
+    <style>
+        #elementoCrecer {
+            width: 50px;
+            height: 50px;
+            background-color: purple;
+            transition: all 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="elementoCrecer"></div>
+    <script>
+        let size = 50;
+        function crecerElemento() {
+            size++;
+            const elemento = document.getElementById('elementoCrecer');
+            elemento.style.width = `${size}px`;
+            elemento.style.height = `${size}px`;
+            if (size < 200) {
+                requestAnimationFrame(crecerElemento);
+            }
+        }
+        requestAnimationFrame(crecerElemento);
+    </script>
+</body>
+
+</html>

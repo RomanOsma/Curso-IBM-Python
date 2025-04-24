@@ -1,0 +1,33 @@
+<!-- Carga una imagen y utiliza un callback para notificar cuando se ha 
+cargado completamente. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de Callback 3</title>
+</head>
+
+<body>
+    <img id="imagen" src="https://via.placeholder.com/150" alt="Imagen de prueba">
+    <script>
+        function cargarImagen(url, callback) {
+            let img = document.getElementById('imagen');
+            img.onload = () => callback(null, 'Imagen cargada exitosamente');
+            img.onerror = () => callback('Error al cargar la imagen', null);
+
+            img.src = url;
+        }
+
+        cargarImagen('https://via.placeholder.co/150', (error, resultado) => {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log(resultado);
+            }
+        });
+    </script>
+</body>
+
+</html>

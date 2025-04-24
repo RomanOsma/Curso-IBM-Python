@@ -1,0 +1,34 @@
+Crea una lista no ordenada (<ul>) con el ID “miLista” y varios elementos 
+de lista (<li>). Luego, usa JavaScript para crear un nuevo elemento de 
+lista y reemplaza uno de los elementos existentes en la lista usando .replaceChild.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio 1: Reemplazar un elemento de una lista</h2>
+<ul id="miLista">
+  <li id="elemento1">Elemento 1</li>
+  <li id="elemento2">Elemento 2</li>
+  <li id="elemento3">Elemento 3</li>
+</ul>
+
+<script>
+// Crea un nuevo elemento de lista
+let nuevoElemento = document.createElement("li");
+nuevoElemento.textContent = "Nuevo elemento";
+
+// Selecciona el elemento que quieres reemplazar
+let elementoParaReemplazar = document.getElementById("elemento2");
+
+// Selecciona el padre del elemento
+let padre = elementoParaReemplazar.parentNode;
+
+// Usa .replaceChild para reemplazar el elemento
+padre.replaceChild(nuevoElemento, elementoParaReemplazar);
+</script>
+
+</body>
+</html>
+
+

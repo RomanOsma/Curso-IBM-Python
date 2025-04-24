@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse In/Out</title>
+</head>
+
+<body>
+    <!-- Mouse In/Out
+    Enunciado: Muestra un mensaje al pasar el ratón por encima de un elemento y otro al salir de él. -->
+
+    <div id="hoverMessage" onmouseover="showMessage('¡Estás sobre el elemento!')" onmouseout="showMessage('¡Has salido del elemento!')" style="width: 200px; height: 200px; background-color: lightgray;"></div>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+    </script>
+</body>
+
+</html>

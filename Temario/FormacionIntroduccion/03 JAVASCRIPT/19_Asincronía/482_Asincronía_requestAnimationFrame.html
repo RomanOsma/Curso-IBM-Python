@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rotación</title>
+    <style>
+        #elementoRotar {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="elementoRotar"></div>
+    <script>
+        let angulo = 0;
+        function rotarElemento() {
+            angulo = (angulo + 1) % 360;
+            const elemento = document.getElementById('elementoRotar');
+            elemento.style.transform = `rotate(${angulo}deg)`;
+            requestAnimationFrame(rotarElemento);
+        }
+        requestAnimationFrame(rotarElemento);
+    </script>
+</body>
+
+</html>

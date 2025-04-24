@@ -1,0 +1,34 @@
+Crea un div con el ID “miDiv” y varios párrafos (<p>). 
+Luego, usa JavaScript para crear un nuevo párrafo y lo 
+inserta en el div en una posición específica usando .insertBefore.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio 2: Insertar un nuevo párrafo en un div en una posición específica</h2>
+<div id="miDiv">
+  <p id="parrafo1">Este es el párrafo 1.</p>
+  <p id="parrafo2">Este es el párrafo 2.</p>
+  <p id="parrafo3">Este es el párrafo 3.</p>
+</div>
+
+<script>
+// Crea un nuevo párrafo
+let nuevoParrafo = document.createElement("p");
+nuevoParrafo.textContent = "Este es un nuevo párrafo.";
+
+// Selecciona el párrafo antes del cual quieres insertar el nuevo párrafo
+let parrafoReferencia = document.getElementById("parrafo2");
+
+// Selecciona el padre del párrafo
+let padre = parrafoReferencia.parentNode;
+
+// Usa .insertBefore para insertar el nuevo párrafo
+padre.insertBefore(nuevoParrafo, parrafoReferencia);
+</script>
+
+</body>
+</html>
+
+

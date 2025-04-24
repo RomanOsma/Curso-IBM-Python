@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Desestructuración de Arreglos Anidados: 
+        // Desestructura el primer elemento del arreglo colores y asigna 
+        // sus valores a nombreColor y codigoHex.
+
+
+        const colores = [['rojo', '#ff0000'], ['verde', '#00ff00'], ['azul', '#0000ff']];
+
+        const [[nombreColor, codigoHex]] = colores;
+        console.log(nombreColor); // 'rojo'
+        console.log(codigoHex); // '#ff0000'
+    </script>
+</body>
+
+</html>

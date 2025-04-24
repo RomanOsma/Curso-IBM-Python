@@ -1,0 +1,32 @@
+<!-- Escribe una función que reciba un array de números y un callback. 
+La función principal deberá aplicar el callback a cada elemento del 
+array y mostrar el resultado. 
+el callback multiplica cada elemento del array por 2.-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <script>
+        function procesarArray(numeros, callback) {
+            for (let i = 0; i < numeros.length; i++) {
+                console.log(callback(numeros[i]));
+            }
+        }
+
+        // Uso de la función
+        procesarArray([1, 2, 3, 4], function (numero) {
+            return numero * 2;
+        });
+
+    </script>
+</body>
+
+</html>

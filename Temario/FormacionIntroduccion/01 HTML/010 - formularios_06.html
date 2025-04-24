@@ -1,0 +1,42 @@
+<!-- Ejemplo de uso de etiqueta form para simular formularios anidados.
+
+    En este ejemplo, tenemos un formulario con un campo de texto y un botón de envío. 
+    También tenemos un <div> que actúa como un formulario anidado con otro campo 
+    de texto. Aunque este <div> no es realmente un formulario, el campo de texto 
+    dentro de él está asociado con el formulario principal a través del atributo 
+    form. Esto significa que cuando se envía el formulario principal, también se 
+    envían los datos del campo de texto “anidado”.
+    
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de etiqueta form para simular formularios anidados</title>
+</head>
+
+<body>
+    <form id="mainForm" style="background-color: aqua;">
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+    </form>
+    <br>
+    <div id="nestedForm" style="background-color: brown;">
+        <label for="lname">Apellido:</label><br>
+        <input type="text" id="lname" name="lname" form="mainForm">
+    </div>
+    <br>
+    <input type="text" id="lname" name="lname" form="mainForm">
+    <input type="text" id="lname" name="lname" form="mainForm">
+    <input type="text" id="lname" name="lname" form="mainForm">
+
+    
+    <button type="submit" form="mainForm">Enviar</button>
+
+
+</body>
+
+</html>

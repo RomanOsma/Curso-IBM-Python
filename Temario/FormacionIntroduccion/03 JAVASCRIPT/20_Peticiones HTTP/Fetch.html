@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Petición API Harry Potter</title>
+</head>
+<body>
+    <div id="characters"></div>
+    <script>
+        fetch('https://hp-api.onrender.com/api/characters')
+            .then(response => response.json()) // Convierte la respuesta en JSON
+            .then(characters => {
+                const charactersElement = document.getElementById('characters');
+                // Asegúrate de manejar la respuesta de acuerdo a cómo está estructurada la API
+                characters.forEach(character => {
+                    const p = document.createElement('p');
+                    p.textContent = character.name; // Suponiendo que la respuesta incluye un campo 'name'
+                    charactersElement.appendChild(p);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
+
+
+
+    </script>
+</body>
+
+</html>

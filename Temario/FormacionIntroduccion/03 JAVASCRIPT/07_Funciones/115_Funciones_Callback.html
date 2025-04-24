@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    Ejecutar Funciones en Serie: Crea una función que ejecute una lista 
+        //    de funciones en serie, donde cada función recibe un callback que debe 
+        //    ser llamado para continuar con la siguiente función.
+
+
+        function series(functions, callback) {
+            function execute(index) {
+                if (index >= functions.length) {
+                    return callback();
+                }
+                functions[index](() => execute(index + 1));
+            }
+            execute(0);
+        }
+
+        // Uso de la función
+        series([
+            next => { console.log('Primero'); next(); },
+            next => { console.log('Segundo'); next(); },
+            next => { console.log('Tercero'); next(); }
+        ], () => console.log('Hecho'));
+
+        // Explicación:
+        // La función series recibe un array de funciones y una función 
+        // callback final.
+        // Definimos una función interna execute que ejecuta cada función 
+        // del array en orden.
+        // Cada función del array debe llamar a su callback para continuar 
+        // con la siguiente función.
+        // Cuando todas las funciones han sido ejecutadas, llamamos a la 
+        // función callback final.
+        // Iniciamos la ejecución llamando a execute con el índice 0.     
+    </script>
+</body>
+
+</html>

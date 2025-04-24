@@ -1,0 +1,29 @@
+<!-- Crea un botón que, al hacer clic, muestre la latitud y longitud actuales del usuario. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button onclick="getLocation()">Obtener ubicación</button>
+    <p id="demo"></p>
+    <script>
+        const host = location.host;
+        console.log("Nombre del servidor:", host);
+
+        const url = location.href;
+        console.log("URL completa:", url);
+
+        const port = location.port;
+        console.log("Puerto accedido:", port);
+
+        const protocol = location.protocol;
+        console.log("Protocolo empleado:", protocol);
+
+        const searchQuery = location.search;
+        console.log("Contenido de la query string:", searchQuery);
+
+    </script>
+</body>
+
+</html>

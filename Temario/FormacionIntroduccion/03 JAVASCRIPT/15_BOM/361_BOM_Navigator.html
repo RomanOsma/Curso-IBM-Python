@@ -1,0 +1,52 @@
+<!-- Crea un archivo HTML básico con un título y cinco botones.
+Cada botón debe tener su propio controlador de eventos onclick que llame a una función JavaScript 
+diferente.
+Las funciones deben hacer lo siguiente:
+
+La primera función debe mostrar la cadena del agente de usuario del navegador del usuario.
+La segunda función debe mostrar el idioma del navegador del usuario.
+La tercera función debe mostrar si el navegador del usuario está en línea o no.
+La cuarta función debe mostrar si las cookies están habilitadas en el navegador del usuario.
+La quinta función debe mostrar la plataforma del sistema operativo del navegador del usuario. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Practicando con los métodos y propiedades del objeto navigator en JavaScript</h1>
+
+    <button onclick="showUserAgent()">Mostrar agente de usuario</button>
+    <button onclick="showLanguage()">Mostrar idioma del navegador</button>
+    <button onclick="showOnlineStatus()">Mostrar estado de conexión</button>
+    <button onclick="showCookiesEnabled()">Mostrar si las cookies están habilitadas</button>
+    <button onclick="showPlatform()">Mostrar plataforma del sistema operativo</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function showUserAgent() {
+            document.getElementById("demo").innerHTML = "Agente de usuario: " + navigator.userAgent;
+        }
+
+        function showLanguage() {
+            document.getElementById("demo").innerHTML = "Idioma del navegador: " + navigator.language;
+        }
+
+        function showOnlineStatus() {
+            document.getElementById("demo").innerHTML = "Estado de conexión: " + (navigator.onLine ? "En línea" : "Desconectado");
+        }
+
+        function showCookiesEnabled() {
+            document.getElementById("demo").innerHTML = "Cookies habilitadas: " + (navigator.cookieEnabled ? "Sí" : "No");
+        }
+
+        function showPlatform() {
+            document.getElementById("demo").innerHTML = "Plataforma del sistema operativo: " + navigator.platform;
+        }
+    </script>
+
+</body>
+
+</html>

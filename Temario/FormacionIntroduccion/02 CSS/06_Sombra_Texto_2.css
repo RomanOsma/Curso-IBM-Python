@@ -1,0 +1,36 @@
+
+
+html  {
+  margin: 0;
+  padding: 0;
+  font: bold normal 30px Arial, Helvetica, sans-serif;
+  }
+   
+#pagina {
+  width: 600px;
+  margin: 0 auto;
+  background: #ddd;
+  }
+   
+p {
+  padding: 10px;
+  color: #ddd;
+  display: block;
+  margin: 0;
+  }
+
+  p#uno {
+    text-shadow: #666 -1px 0px 0px, #666 1px 0px 0px, #666 0px 1px 0px, #666 0px -1px 0px;
+    }
+     
+  p#dos {
+    text-shadow: #f00 -1px 0px 0px, #00f 1px 0px 0px, #f00 0px 1px 0px, #00f 0px -1px 0px;
+    }
+     
+  p#tres {
+    text-shadow: #00f -2px 1px 0px, #f00 2px -1px 0px;
+    }
+     
+  p#cuatro {
+    text-shadow: rgb(0, 0, 0)  1px 2px 0px;
+    }

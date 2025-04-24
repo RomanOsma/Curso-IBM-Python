@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Crear una función que separe el primer elemento del resto de un array: 
+        // Escribe una función que tome un array y devuelva un objeto con dos propiedades: 
+        // primero con el primer elemento y resto con el resto del array.
+
+        function separarPrimeroYResto(array) {
+
+            var [primero, ...resto] = array;
+            console.log(resto);
+            console.log(resto[0]);
+            console.log(resto[1]);
+            console.log(resto[2]);
+            
+        }
+        console.log(separarPrimeroYResto([1, 2, 3, 4])); // Debería imprimir { primero: 1, resto: [2, 3, 4] }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+
+<!-- ENUNCIADO:
+
+Partiendo del siguiente HTML, crear escribir un script 
+que haga lo siguiente:
+
+ - Obtén el contenido de texto del elemento con id “miDiv” 
+   usando .textContent y muestra el resultado en la consola.
+
+ - Obtén el contenido de texto visible del mismo elemento 
+ usando .innerText y muestra el resultado en la consola.
+
+ - Agrega un evento de clic al botón que cambia la visibilidad 
+   del mensaje “Nuevo mensaje”.
+
+ - Después de cada clic en el botón, vuelve a obtener el contenido 
+   de texto y el contenido de texto visible del elemento con 
+   id “miDiv” y muestra los resultados en la consola.:
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="miDiv">
+        <p>Hola a todos.</p>
+        <p>Me llamo <strong>Manolo</strong>. <span style="display: none">Nuevo mensaje</span></p>
+        <p hidden>Esto es un mensaje oculto.</p>
+        <button id="miBoton">Mostrar/Ocultar mensaje</button>
+    </div>
+
+    <script>
+        document.querySelector('#miBoton').addEventListener('click', function() {
+            var span = document.querySelector('#miDiv span');
+            if (span.style.display === 'none') {
+                span.style.display = 'inline';
+            } else {
+                span.style.display = 'none';
+            }
+        });
+    </script>
+</body> -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="miDiv">
+        <p>Hola a todos.</p>
+        <p>Me llamo <strong>Manolo</strong>. <span style="display: none">Nuevo mensaje</span></p>
+        <p hidden>Esto es un mensaje oculto.</p>
+        <button id="miBoton">Mostrar/Ocultar mensaje</button>
+    </div>
+
+    <script>
+        // Selecciona el elemento con id "miDiv"
+        var miDiv = document.querySelector('#miDiv');
+
+        // Función para imprimir el contenido de texto y el contenido de texto visible
+        function imprimirContenido() {
+            var contenidoTexto = miDiv.textContent;
+            console.log('Contenido de texto con .textContent:', contenidoTexto);
+
+            var contenidoTextoVisible = miDiv.innerText;
+            console.log('Contenido de texto visible con .innerText:', contenidoTextoVisible);
+        }
+
+        // Imprime el contenido inicial
+        imprimirContenido();
+
+        // Agrega un evento de clic al botón
+        document.querySelector('#miBoton').addEventListener('click', function() {
+            var span = document.querySelector('#miDiv span');
+            if (span.style.display === 'none') {
+                span.style.display = 'inline';
+            } else {
+                span.style.display = 'none';
+            }
+
+            // Imprime el contenido después de cada clic
+            imprimirContenido();
+        });
+    </script>
+</body>
+</html>

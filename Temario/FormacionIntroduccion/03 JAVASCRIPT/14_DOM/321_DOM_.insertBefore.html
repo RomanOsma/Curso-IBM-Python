@@ -1,0 +1,28 @@
+<!-- Tienes un párrafo y una imagen en un elemento div existente con el id “div1”. 
+Tu tarea es insertar un nuevo párrafo antes de la imagen con el 
+texto “Párrafo antes de la imagen”. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="div1">
+        <h2>Elemento existente</h2>
+        <p id="p1">Este es un párrafo.</p>
+        <img id="img1" src="ruta/a/la/imagen.jpg" alt="Una imagen">
+    </div>
+
+    <script>
+        // Ejercicio 2
+        var div = document.getElementById("div1");
+        var imagen = document.getElementById("img1");
+        var nuevoParrafo = document.createElement("p");
+        nuevoParrafo.appendChild(document.createTextNode("Párrafo antes de la imagen"));
+        div.insertBefore(nuevoParrafo, null); //appendChild
+    </script>
+
+</body>
+
+</html>

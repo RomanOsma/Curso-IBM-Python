@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de objetos</title>
+</head>
+
+<body>
+    <script>
+
+        //Creación del objeto "libro"
+        let libro = {
+
+            //Atributos
+            titulo: '1984',
+            autor: 'George Orwell',
+            publicado: 1949,
+
+            //Métodos
+            leer: function () {
+                console.log('Estás leyendo ' + this.titulo + ' por ' + this.autor);
+            },
+
+            obtenerEdad: function () {
+                let años = new Date().getFullYear() - this.publicado;
+                return años;
+            }
+        };
+
+        // Uso de las propiedades (o atributos) del objeto
+        console.log(libro.autor);
+        console.log(libro.titulo);
+        //Podemos acceder a una propiedad también como si fuese un array
+        console.log(libro['titulo']);
+
+        //Cambio en una propiedad del objeto
+        libro.titulo = "Nuevo título";
+        console.log(libro.titulo);
+                
+        // Uso de los métodos del objeto
+        libro.leer();  // Salida: 'Estás leyendo 1984 por George Orwell'
+
+        console.log('El libro tiene ' + libro.obtenerEdad() + ' años.');  // Salida: 'El libro tiene 75 años.' (si estamos en el año 2024)
+        
+    </script>
+</body>
+
+</html>

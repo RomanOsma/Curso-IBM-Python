@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Encontrar el valor máximo en cada fila de una matriz: 
+        // Dado un array bidimensional de números, encuentra el valor máximo en cada 
+        // fila y muestra los resultados.
+
+
+        // const matrizNumeros = [
+        //     [34, 78, 12],
+        //     [99, 56, 43],
+        //     [17, 88, 65]
+        // ];
+
+        // for (let i = 0; i < matrizNumeros.length; i++) {
+        //     let maximo = matrizNumeros[i][0];
+        //     for (let j = 1; j < matrizNumeros[i].length; j++) {
+        //         if (matrizNumeros[i][j] > maximo) {
+        //             maximo = matrizNumeros[i][j];
+        //         }
+        //     }
+        //     console.log(`Máximo en fila ${i}: ${maximo}`);
+        // }
+
+        //Con un for each
+
+        const matrizNumeros = [
+            [34, 78, 12],
+            [99, 56, 43],
+            [17, 88, 65]
+        ];
+
+        matrizNumeros.forEach((fila, indiceFila) => {
+            let maximo = fila[0];
+            fila.forEach((numero) => {
+                if (numero > maximo) {
+                    maximo = numero;
+                }
+            });
+            console.log(`Máximo en fila ${indiceFila}: ${maximo}`);
+        });
+
+    </script>
+</body>
+
+</html>

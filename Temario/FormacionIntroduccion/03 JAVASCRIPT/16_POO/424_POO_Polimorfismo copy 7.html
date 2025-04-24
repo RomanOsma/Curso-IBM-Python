@@ -1,0 +1,46 @@
+<!-- Crea funciones para reproducir audio y video. 
+Aunque los objetos Audio y Video son diferentes, ambos tienen un método play(). 
+Usa duck typing para reproducir el contenido sin importar el tipo de objeto. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polimorfismo</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        function Audio(nombre) {
+            this.nombre = nombre;
+            this.play = function () {
+                console.log(`Reproduciendo audio: ${nombre}`);
+            };
+        }
+
+        function Video(nombre) {
+            this.nombre = nombre;
+            this.play = function () {
+                console.log(`Reproduciendo video: ${nombre}`);
+            };
+        }
+
+        function reproducirContenido(contenido) {
+            if (contenido.play) {
+                contenido.play();
+            } else {
+                console.log("El contenido no se puede reproducir");
+            }
+        }
+
+        // Ejemplo de uso
+        reproducirContenido(new Audio("audio.mp3"));
+        reproducirContenido(new Video("video.mp4"));
+
+    </script>
+</body>
+
+</html>

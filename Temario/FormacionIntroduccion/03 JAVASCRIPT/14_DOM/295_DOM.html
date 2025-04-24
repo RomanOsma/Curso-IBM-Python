@@ -1,0 +1,62 @@
+<!-- Tienes una página web con una lista de tareas pendientes. 
+Cada tarea está en un elemento <li> dentro de un elemento <ul>. 
+Tu objetivo es escribir un script que reemplace la primera 
+tarea pendiente con una nueva tarea cuando el usuario pulse 
+un botón -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar lista de tareas</title>
+</head>
+
+<h2>Mis tareas pendientes:</h2>
+
+<ul id="miLista">
+    <li id="tarea1">Comprar leche</li>
+    <li id="tarea2">Estudiar para el examen</li>
+    <li id="tarea3">Llamar a mamá</li>
+</ul>
+
+<button onclick="cambiarTarea()">Cambiar primera tarea</button>
+
+<script>
+    function cambiarTarea() {
+        // Obtén una referencia a la primera tarea:
+        var tarea1 = document.getElementById('tarea1');
+
+        // Usa .outerHTML para reemplazar la tarea completa:
+        tarea1.outerHTML = '<li id="tarea1">Hacer ejercicio</li>';
+    }
+</script>
+</body>
+
+</html>

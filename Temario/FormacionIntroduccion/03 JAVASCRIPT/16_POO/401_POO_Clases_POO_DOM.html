@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas POO y DOM</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="input-tarea" placeholder="Añade una nueva tarea" />
+    <button id="btn-agregar">Agregar Tarea</button>
+    <ul id="lista-tareas"></ul>
+
+    <script>
+        class ListaDeTareas {
+            constructor() {
+                this.tareas = [];
+            }
+
+            agregarTarea(tarea) {
+                this.tareas.push(tarea);
+                this.actualizarDOM();
+            }
+
+            eliminarTarea(index) {
+                this.tareas.splice(index, 1);
+                this.actualizarDOM();
+            }
+
+            actualizarDOM() {
+                const lista = document.getElementById('lista-tareas');
+                lista.innerHTML = ''; // Limpiar la lista antes de volver a renderizarla
+
+                this.tareas.forEach((tarea, index) => {
+                    const elementoTarea = document.createElement('li');
+                    elementoTarea.textContent = tarea;
+
+                    const botonEliminar = document.createElement('button');
+                    botonEliminar.textContent = 'Eliminar';
+                    botonEliminar.onclick = () => this.eliminarTarea(index);
+
+                    elementoTarea.appendChild(botonEliminar);
+                    lista.appendChild(elementoTarea);
+                });
+            }
+        }
+
+        // Instancia de la lista de tareas
+        const miListaDeTareas = new ListaDeTareas();
+
+        document.getElementById('btn-agregar').addEventListener('click', () => {
+            const tarea = document.getElementById('input-tarea').value;
+            if (tarea) {
+                miListaDeTareas.agregarTarea(tarea);
+                document.getElementById('input-tarea').value = ''; // Limpiar el campo después de agregar
+            }
+        });
+    </script>
+</body>
+</html>

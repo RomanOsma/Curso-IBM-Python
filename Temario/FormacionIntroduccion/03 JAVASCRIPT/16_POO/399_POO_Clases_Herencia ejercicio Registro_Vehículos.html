@@ -1,0 +1,148 @@
+<!-- Sistema de Registro de Vehículos
+Objetivo: Desarrollar un sistema que permita registrar diferentes tipos de 
+vehículos (coches y motocicletas) en un concesionario, incluyendo información 
+específica para cada tipo. Implementa herencia, condicionales, bucles, 
+uso de super, y encapsulación.
+
+Clases a Implementar:
+Vehiculo
+
+Propiedades Privadas: marca, modelo, año.
+Métodos: Constructor, getters para cada propiedad, y un método mostrarInformacion() 
+que imprime los detalles del vehículo.
+Coche (extends Vehiculo)
+
+Propiedades Privadas Adicionales: tipoCombustible, cantidadPuertas.
+Métodos: Constructor (recuerda usar super), y sobrescribe mostrarInformacion() 
+para incluir tipoCombustible y cantidadPuertas.
+Motocicleta (extends Vehiculo)
+
+Propiedades Privadas Adicionales: cilindrada.
+Métodos: Constructor (usa super), y sobrescribe mostrarInformacion() para incluir 
+cilindrada.
+
+Funcionalidades Adicionales:
+Implementa una función o método para registrar un nuevo vehículo, añadiéndolo a 
+una lista de vehículos.
+Crea una función o método que liste todos los vehículos registrados, utilizando 
+un bucle para mostrar la información de cada uno.
+Utiliza condicionales para realizar búsquedas específicas, por ejemplo, 
+encontrar todos los coches de una marca específica o todas las motocicletas 
+con una cilindrada superior a un cierto valor. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Herencia</title>
+</head>
+
+<body>
+    <script>
+        // Clase Vehiculo
+        class Vehiculo {
+            #marca;
+            #modelo;
+            #año;
+
+            constructor(marca, modelo, año) {
+                this.#marca = marca;
+                this.#modelo = modelo;
+                this.#año = año;
+            }
+
+            get marca() {
+                return this.#marca;
+            }
+
+            get modelo() {
+                return this.#modelo;
+            }
+
+            get año() {
+                return this.#año;
+            }
+
+            mostrarInformacion() {
+                console.log(`Marca: ${this.#marca}, Modelo: ${this.#modelo}, Año: ${this.#año}`);
+            }
+        }
+
+        // Clase Coche
+        class Coche extends Vehiculo {
+            #tipoCombustible;
+            #cantidadPuertas;
+
+            constructor(marca, modelo, año, tipoCombustible, cantidadPuertas) {
+                super(marca, modelo, año);
+                this.#tipoCombustible = tipoCombustible;
+                this.#cantidadPuertas = cantidadPuertas;
+            }
+
+            mostrarInformacion() {
+                super.mostrarInformacion();
+                console.log(`Tipo de Combustible: ${this.#tipoCombustible}, Cantidad de Puertas: ${this.#cantidadPuertas}`);
+            }
+        }
+
+        // Clase Motocicleta
+        class Motocicleta extends Vehiculo {
+            #cilindrada;
+
+            constructor(marca, modelo, año, cilindrada) {
+                super(marca, modelo, año);
+                this.#cilindrada = cilindrada;
+            }
+
+            mostrarInformacion() {
+                super.mostrarInformacion();
+                console.log(`Cilindrada: ${this.#cilindrada}`);
+            }
+        }
+
+        // Funcionalidades Adicionales
+        const concesionario = {
+            vehiculos: [],
+
+            registrarVehiculo(vehiculo) {
+                this.vehiculos.push(vehiculo);
+            },
+
+            listarVehiculos() {
+                console.log("Vehículos registrados:");
+                this.vehiculos.forEach(vehiculo => vehiculo.mostrarInformacion());
+            },
+
+            buscarVehiculos(criterio, valor) {
+                return this.vehiculos.filter(vehiculo => vehiculo[criterio] === valor);
+            },
+
+            // Ejemplo de uso de condicionales para búsquedas específicas
+            encontrarCochesPorMarca(marca) {
+                const coches = this.buscarVehiculos('marca', marca).filter(vehiculo => vehiculo instanceof Coche);
+                console.log(`Coches de la marca ${marca}:`);
+                coches.forEach(coche => coche.mostrarInformacion());
+            },
+
+            encontrarMotocicletasPorCilindrada(minCilindrada) {
+                const motocicletas = this.vehiculos.filter(vehiculo => vehiculo instanceof Motocicleta && vehiculo.cilindrada > minCilindrada);
+                console.log(`Motocicletas con cilindrada superior a ${minCilindrada}:`);
+                motocicletas.forEach(motocicleta => motocicleta.mostrarInformacion());
+            }
+        };
+
+        // Demostración de uso
+        concesionario.registrarVehiculo(new Coche("Toyota", "Corolla", 2020, "Gasolina", 4));
+        concesionario.registrarVehiculo(new Motocicleta("Yamaha", "R3", 2019, 321));
+
+        concesionario.listarVehiculos();
+
+        concesionario.encontrarCochesPorMarca("Toyota");
+        concesionario.encontrarMotocicletasPorCilindrada(300);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<!-- Abre una nueva ventana del navegador con un botón. 
+Al hacer clic en este botón, la ventana se debe cerrar. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button onclick="openWindow()">Abrir nueva ventana</button>
+    <script>
+        function openWindow() {
+            var newWindow = window.open("", "Nueva ventana", "width=200,height=100");
+            newWindow.document.write("<button onclick='window.close()'>Cerrar esta ventana</button>");
+        }
+    </script>
+</body>

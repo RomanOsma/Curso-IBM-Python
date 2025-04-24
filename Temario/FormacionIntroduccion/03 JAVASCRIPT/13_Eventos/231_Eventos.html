@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento ... ... onsubmit</title>
+</head>
+
+<body>
+    <!-- Evento onsubmit
+    Enunciado: Muestra un mensaje al enviar el formulario. -->
+
+    <form onsubmit="showMessage()">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        function showMessage() {
+            alert('¡El formulario ha sido enviado!');
+        }
+    </script>
+</body>
+
+</html>

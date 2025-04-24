@@ -1,0 +1,53 @@
+<!-- 
+     *****************************************
+     *  Lista con iconos personalizados      *
+     ***************************************** 
+-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Elimina los marcadores de lista y añade un margen */
+ul {
+   list-style-type: none; 
+  /* margin: 0;
+  padding: 0; */
+}
+
+/* Añade un icono personalizado antes de cada elemento de la lista */
+li::before {
+  /*content: url('07_Listas_02.png');  Reemplaza 'icon.png' con la URL de tu icono */
+  margin-right: 10px;
+}
+
+/* Cambia el color y el estilo del texto de los enlaces */
+li a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* Cambia el color del texto de los enlaces cuando se pasa el cursor sobre ellos */
+li a:hover {
+  color: red;
+}
+
+/* Cambia el color de fondo del elemento de la lista cuando se pasa el cursor sobre él */
+li:hover {
+  background-color: #f0f0f0;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#">Elemento 1</a></li>
+  <li><a href="#">Elemento 2</a></li>
+  <li><a href="#">Elemento 3</a></li>
+</ul>
+
+</body>
+</html>

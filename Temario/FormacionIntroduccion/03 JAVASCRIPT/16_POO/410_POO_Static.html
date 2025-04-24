@@ -1,0 +1,38 @@
+<!-- Crea una clase Persona que contenga una propiedad estática para llevar la 
+cuenta de cuántas instancias de la clase han sido creadas. 
+Cada vez que se instancie la clase, el contador debe incrementarse. 
+Además, incluye un método estático que imprima el número total de instancias. -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Static</title>
+</head>
+
+<body>
+    <script>
+        class Persona {
+            static contadorInstancias = 0;
+
+            constructor(nombre) {
+                this.nombre = nombre;
+                Persona.contadorInstancias++;
+            }
+
+            static mostrarContadorInstancias() {
+                console.log(`Número total de instancias: ${Persona.contadorInstancias}`);
+            }
+        }
+
+        const persona1 = new Persona("Ana");
+        const persona2 = new Persona("Luis");
+        Persona.mostrarContadorInstancias(); // Debería mostrar "Número total de instancias: 2"
+
+    </script>
+</body>
+
+</html>

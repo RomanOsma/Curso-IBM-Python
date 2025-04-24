@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doble Clic para Cambiar Color</title>
+</head>
+
+<body>
+    <!-- Doble Clic para Cambiar Color
+    Enunciado: Haz que el color de un párrafo cambie al hacer doble clic sobre él. -->
+
+    <p id="dblClickParagraph">Haz doble clic en este texto para cambiar su color.</p>
+
+    <script>
+        document.getElementById('dblClickParagraph').addEventListener('dblclick', function() {
+            this.style.color = this.style.color === 'red' ? 'blue' : 'red';
+        });
+    </script>
+</body>
+
+</html>

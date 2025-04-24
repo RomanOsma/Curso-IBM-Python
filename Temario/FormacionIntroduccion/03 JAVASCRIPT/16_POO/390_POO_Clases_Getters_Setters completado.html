@@ -1,0 +1,87 @@
+<!-- Diseña una clase Persona que contenga el nombre y la edad de la persona. 
+La edad no puede ser menor a 0 ni mayor a 120 años. 
+Implementa getters y setters para ambas propiedades, incluyendo validaciones 
+en el setter de la edad. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters y Setters</title>
+</head>
+
+<body>
+    <script>
+        class Persona {
+            #nombre;
+            #edad;
+
+            constructor() {
+                // Inicialización directa con métodos para solicitar los datos
+                try {
+                    this.nombre = this.solicitarNombre();
+                    this.edad = this.solicitarEdad();
+                } catch (error) {
+                    console.error('Error al crear la instancia de Persona:', error);
+                    throw error; 
+                }
+            }
+
+            get nombre() {
+                return this.#nombre;
+            }
+
+            set nombre(valor) {
+                if (typeof valor === 'string' && valor.trim() !== '' && isNaN(valor)) {
+                    this.#nombre = valor;
+                } else {
+                    throw new Error('El nombre debe ser un texto no vacío y no numérico.');
+                }
+            }
+
+            get edad() {
+                return this.#edad;
+            }
+
+            set edad(valor) {
+                valor = Number(valor);
+                if (!isNaN(valor) && valor >= 0 && valor <= 120) {
+                    this.#edad = valor;
+                } else {
+                    throw new Error('La edad debe ser un número entre 0 y 120.');
+                }
+            }
+
+            solicitarNombre() {
+                let nombre = prompt('Introduce el nombre:');
+                while (!nombre || nombre.trim() === '' || !isNaN(nombre)) {
+                    alert('El nombre debe ser un texto no vacío y no numérico.');
+                    nombre = prompt('Introduce el nombre:');
+                }
+                return nombre;
+            }
+
+            solicitarEdad() {
+                let edad = parseInt(prompt('Introduce la edad:'), 10);
+                while (isNaN(edad) || edad < 0 || edad > 120) {
+                    alert('La edad debe ser un número entre 0 y 120.');
+                    edad = parseInt(prompt('Introduce la edad:'), 10);
+                }
+                return edad;
+            }
+        }
+
+        try {
+            const persona = new Persona();
+            console.log(`Nombre: ${persona.nombre}, Edad: ${persona.edad}`);
+        } catch (error) {
+            console.error('Se produjo un error al crear la persona:', error.message);
+        }
+
+
+    </script>
+</body>
+
+</html>

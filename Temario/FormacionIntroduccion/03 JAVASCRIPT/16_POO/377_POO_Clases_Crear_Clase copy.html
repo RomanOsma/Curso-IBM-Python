@@ -1,0 +1,49 @@
+<!-- Crear una clase con dos atributos y dos métodos
+
+Crear dos instancias de clase e imprimir el contenido. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instanciar clases</title>
+</head>
+
+<body>
+    <script>
+        // Definición de la clase
+        class EjemploClase {
+            constructor(atributo1, atributo2) {
+                this.atributo1 = atributo1;
+                this.atributo2 = atributo2;
+            }
+
+            // Método para imprimir los atributos
+            imprimirAtributos() {
+                console.log(`Atributo 1: ${this.atributo1}, Atributo 2: ${this.atributo2}`);
+            }
+
+            // Método para cambiar los valores de los atributos
+            cambiarAtributos(valor1, valor2) {
+                this.atributo1 = valor1;
+                this.atributo2 = valor2;
+            }
+        }
+
+        // Crear dos instancias de la clase
+        const instancia1 = new EjemploClase('Hola', 'Mundo');
+        const instancia2 = new EjemploClase('JavaScript', 'Programación');
+
+        // Imprimir el contenido de las instancias
+        console.log('Contenido de la instancia 1:');
+        instancia1.imprimirAtributos();
+
+        console.log('Contenido de la instancia 2:');
+        instancia2.imprimirAtributos();
+
+    </script>
+</body>
+
+</html>

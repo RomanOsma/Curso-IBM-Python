@@ -1,0 +1,138 @@
+
+
+<!-- Layout básico con Flex -->
+<!-- https://www.irinadelgado.com/sitio-web-con-css-flex/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 50px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(156, 120, 190);
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        aside {
+            flex: 30%;
+            background-color: beige;
+            padding: 20px;
+
+        }
+
+        section {
+            flex: 70%;
+            background-color: burlywood;
+            padding: 20px;
+        }
+
+        footer{
+            padding: 20px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        @media screen and (max-width:700px){
+            nav, .row{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Título de la página WEB</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Productos</a>
+        <a href="#">Quienes somos</a>
+        <a href="#">Contacto</a>
+    </nav>
+    <div class="row">
+        <aside>
+            <h2>Aside</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia ipsam quas laudantium voluptatibus sit
+                dolorem alias recusandae laboriosam consectetur ab, unde ex consequuntur iure iusto adipisci repellat
+                cum. Deserunt expedita minima perferendis itaque delectus earum quo amet. Pariatur laboriosam incidunt
+                facere nostrum omnis corporis repellat sed porro molestiae consequatur, vero eum sapiente quod maxime.
+                Quod dignissimos, sunt enim eius ullam voluptate, laudantium sed provident eligendi dolores ea sit illum
+                quidem? Fugiat, similique! Nemo, ex distinctio aperiam, sunt tempore libero delectus nostrum unde
+                tenetur hic nam ut suscipit autem. Ullam aspernatur voluptatem atque qui sapiente et veniam nobis eos
+                accusantium laborum obcaecati cum eaque, cupiditate at voluptatum nihil nostrum velit rerum odit
+                deleniti quibusdam quam quae. </p>
+        </aside>
+        <section>
+            <h2>Section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi modi, est repudiandae hic dolor qui,
+                impedit aliquid eligendi praesentium laudantium soluta quia ipsum fugit blanditiis odio sit corrupti
+                voluptate expedita adipisci cupiditate architecto. Culpa, assumenda animi! Voluptates dolorem quas hic
+                ipsum nesciunt adipisci excepturi est nihil temporibus quis, voluptate tenetur doloribus illum animi vel
+                architecto delectus repellendus quod accusantium obcaecati voluptas praesentium. At eaque eveniet facere
+                harum blanditiis nesciunt, deserunt expedita quis, velit sequi fugiat deleniti, dolor vitae ratione et
+                neque ullam atque ad aliquam consequatur id esse tenetur! Praesentium magnam obcaecati id suscipit in
+                sint non natus eum! Nulla blanditiis odit laboriosam. Pariatur voluptates reprehenderit sed, reiciendis
+                error sint fuga, unde animi aspernatur excepturi esse assumenda labore accusantium vero, facilis ipsa
+                architecto ad. Modi fuga eum, aliquam facilis repudiandae at laborum? Consequuntur nisi, sequi similique
+                cum aut enim exercitationem expedita iure illo quaerat officiis obcaecati necessitatibus, consequatur
+                placeat sapiente dignissimos totam recusandae! Et odit modi rem blanditiis quod dolorem enim recusandae,
+                officiis, officia, cumque praesentium. Debitis fugit nihil commodi ad explicabo labore eius optio at.
+                Repudiandae culpa ipsam dolore aliquam perferendis quas. Commodi cum quis consequatur maiores nulla
+                accusantium minus laudantium consectetur repellat architecto dicta nesciunt, dolorem eum ex provident
+                odit enim dolorum placeat. Ad deleniti inventore fugiat earum corporis quaerat, eaque magni voluptatibus
+                iste voluptatem labore expedita tempora enim repellat fugit minima tempore quasi consequatur soluta
+                debitis qui quod odit. Assumenda praesentium molestias at temporibus accusantium repellendus optio saepe
+                aliquam architecto modi molestiae omnis, eos facere laudantium voluptatem qui beatae magnam vitae
+                numquam. Iusto, quod amet? Rem voluptates ratione consequuntur provident fugit deserunt neque,
+                praesentium quisquam! Temporibus voluptas exercitationem ipsum, impedit unde deserunt quod saepe quos
+                error. Architecto obcaecati, inventore ipsum perferendis distinctio id, ipsam, suscipit blanditiis
+                maxime a maiores. Corrupti aut totam, accusamus iste dicta enim itaque.Alias repellendus eaque illum
+                dolor laboriosam, unde culpa natus maiores
+                nobis at omnis sint dicta minima veritatis atque amet quibusdam nemo, accusamus maxime quasi ea,
+                blanditiis aperiam cumque iste. Accusamus consectetur dolores doloremque dolore. Eaque aut, dolore saepe
+                optio, distinctio et sint ipsam quae, repellendus non pariatur rem! Quidem distinctio voluptatibus amet,
+                eligendi, adipisci earum minima ipsum minus incidunt optio possimus hic ad cupiditate ea consequatur
+                alias. Adipisci exercitationem quisquam commodi debitis omnis accusamus. Reiciendis animi, cumque itaque
+                quia inventore ea blanditiis tenetur quod iure praesentium perferendis, molestias deleniti ipsum magnam
+                eaque molestiae pariatur! Quis fuga quidem error unde praesentium, sequi rem esse doloribus, obcaecati
+                cum quasi! Odio dignissimos maiores animi aperiam hic ex asperiores deleniti eius suscipit aspernatur
+                aut, explicabo mollitia similique deserunt quas molestiae dicta quo ea repellendus debitis? Quisquam
+                nostrum quod et illum quia provident quas officiis itaque tenetur id tempora quam distinctio velit ad
+                eum hic dicta beatae eligendi, sapiente nulla veritatis maiores reiciendis! Earum atque adipisci omnis
+                veniam aut vitae tenetur aperiam incidunt voluptas illum itaque, nemo modi? Rem facere dolores tempore
+                totam quidem natus quibusdam magnam quisquam nam atque.</p>
+        </section>
+    </div>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+</body>
+
+</html>

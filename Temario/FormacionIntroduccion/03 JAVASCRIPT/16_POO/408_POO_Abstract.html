@@ -1,0 +1,64 @@
+<!-- Implementa una clase abstracta Producto que tenga un método abstracto precioFinal(). 
+Crea dos clases derivadas: Libro y Electronico. 
+Libro tiene un impuesto adicional sobre el precio base, mientras que Electronico 
+tiene un descuento. Asegúrate de que no se pueda instanciar la clase Producto 
+directamente. -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Abstract</title>
+</head>
+
+<body>
+    <script>
+        class Producto {
+            constructor(precio) {
+                if (new.target === Producto) {
+                    throw new Error("No se puede instanciar la clase abstracta Producto.");
+                }
+                this.precio = precio;
+            }
+
+            precioFinal() {
+                throw new Error("El método precioFinal() debe ser implementado por la subclase.");
+            }
+        }
+
+        class Libro extends Producto {
+            constructor(precio, impuesto) {
+                super(precio);
+                this.impuesto = impuesto;
+            }
+
+            precioFinal() {
+                return this.precio + (this.precio * this.impuesto / 100);
+            }
+        }
+
+        class Electronico extends Producto {
+            constructor(precio, descuento) {
+                super(precio);
+                this.descuento = descuento;
+            }
+
+            precioFinal() {
+                return this.precio - (this.precio * this.descuento / 100);
+            }
+        }
+
+        // let producto = new Producto(100); // Esto debería lanzar un error.
+        let libro = new Libro(100, 10); // 10% de impuesto
+        console.log(libro.precioFinal()); // Debe imprimir el precio final del libro con impuesto.
+
+        let electronico = new Electronico(100, 20); // 20% de descuento
+        console.log(electronico.precioFinal()); // Debe imprimir el precio final del electrónico con descuento.
+
+    </script>
+</body>
+
+</html>

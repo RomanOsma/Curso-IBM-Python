@@ -1,0 +1,33 @@
+
+    
+<!-- Escribe un script que cree una tabla (<table>) con 2 filas 
+    y 2 columnas, y agregue texto en las celdas (<td>). -->
+
+       
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Ejercicio 4</title>
+        </head>
+        <body>
+            <script>
+                const table = document.createElement('table');
+                for (let i = 0; i < 4; i++) {
+                    const tr = document.createElement('tr');
+                    for (let j = 0; j < 6; j++) {
+                        const td = document.createElement('td');
+                        td.textContent = `Fila ${i + 1}, Columna ${j + 1}`;
+                        tr.appendChild(td);
+                    }
+                    table.appendChild(tr);
+                }
+                document.body.appendChild(table);
+            </script>
+        </body>
+        </html>
+        
+
+
+

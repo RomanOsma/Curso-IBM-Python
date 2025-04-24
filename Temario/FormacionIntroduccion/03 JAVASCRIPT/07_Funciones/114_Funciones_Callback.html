@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Encontrar un Elemento: Escribe una función que encuentre un 
+        // elemento en un array que cumpla con una condición especificada 
+        // en una función callback.
+
+
+        function find(array, callback) {
+            for (let i = 0; i < array.length; i++) {
+                if (callback(array[i], i, array)) {
+                    return array[i];
+                }
+            }
+            return undefined;
+        }
+
+        // Uso de la función
+        const numbers = [1, 2, 3, 4, 5];
+        const firstEven = find(numbers, number => number % 2 === 0);
+        console.log(firstEven); // Debería mostrar 2
+
+        // Explicación:
+        // La función find recibe un array y una función callback que define el 
+        // criterio de búsqueda.
+        // Dentro de un bucle for, llamamos a la función callback con el elemento 
+        // actual, su índice y el array completo.
+        // Si la función callback retorna true, retornamos el elemento actual, 
+        // ya que es el primero que cumple la condición.
+        // Si no se encuentra ningún elemento que cumpla la condición, 
+        // retornamos undefined.
+    </script>
+</body>
+
+</html>

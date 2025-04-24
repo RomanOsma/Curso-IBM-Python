@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click del Ratón</title>
+</head>
+
+<body>
+    <!-- Click del Ratón
+    Enunciado: Muestra un mensaje al presionar y al soltar el botón del ratón. -->
+
+    <button onmousedown="showMessage('¡Botón del ratón presionado!')" onmouseup="showMessage('¡Botón del ratón soltado!')">Haz clic aquí</button>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+    </script>
+</body>
+
+</html>

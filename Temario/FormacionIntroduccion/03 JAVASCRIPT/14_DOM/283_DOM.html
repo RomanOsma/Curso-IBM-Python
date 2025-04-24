@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="page" class="info data dark">Hola Mundo</div>
+    <script>
+        const element = document.querySelector("#page");
+
+        // ¿Qué clases tiene?
+        console.log(element.classList);              
+        // ["info", "data", "dark"] (DOMTokenList)
+
+        console.log(element.classList.value);        
+        // "info data dark" (String)
+
+        console.log(element.classList.length);       // 3
+
+        // Convertirlas a array
+        console.log(Array.from(element.classList));   
+        // ["info", "data", "dark"] (Array)
+        
+        console.log([...element.classList]);         
+        // ["info", "data", "dark"] (Array)
+
+        // Consultarlas
+        console.log(element.classList.item(0));      // "info"
+        console.log(element.classList.item(1));      // "data"
+        console.log(element.classList.item(3));      // null
+
+        console.log(element.classList.contains("dark")) // true
+        console.log(element.classList.contains("otra")) // false
+    </script>
+</body>
+</html>

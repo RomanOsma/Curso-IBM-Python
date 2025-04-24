@@ -1,0 +1,53 @@
+<!-- tienes un elemento div existente con el id “div1” que contiene una imagen y dos párrafos. 
+Tu tarea es realizar las siguientes operaciones:
+
+Inserta un nuevo elemento span al principio del div con el texto “Inicio del div”.
+Inserta un nuevo elemento span al final del div con el texto “Final del div”.
+Inserta un nuevo elemento span al principio de cada párrafo con el texto “Inicio del párrafo”.
+Inserta un nuevo elemento span al final de cada párrafo con el texto “Final del párrafo”. -->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="div1">
+        <h2>Elemento existente</h2>
+        <p id="p1">Este es el primer párrafo.</p>
+        <p id="p2">Este es el segundo párrafo.</p>
+        <img id="img1" src="ruta/a/la/imagen.jpg" alt="Una imagen">
+    </div>
+
+    <script>
+        // Ejercicio
+        var div = document.getElementById("div1");
+
+        // 1. Insertar un nuevo span al principio del div
+        var spanInicioDiv = document.createElement("span");
+        spanInicioDiv.appendChild(document.createTextNode("Inicio del div"));
+        div.prepend(spanInicioDiv);
+
+        // 2. Insertar un nuevo span al final del div
+        var spanFinalDiv = document.createElement("span");
+        spanFinalDiv.appendChild(document.createTextNode("Final del div"));
+        div.append(spanFinalDiv);
+
+        // 3. Insertar un nuevo span al principio de cada párrafo
+        var parrafos = div.getElementsByTagName("p");
+        for (var i = 0; i < parrafos.length; i++) {
+            var spanInicioParrafo = document.createElement("span");
+            spanInicioParrafo.appendChild(document.createTextNode("Inicio del párrafo"));
+            parrafos[i].prepend(spanInicioParrafo);
+        }
+
+        // 4. Insertar un nuevo span al final de cada párrafo
+        for (var i = 0; i < parrafos.length; i++) {
+            var spanFinalParrafo = document.createElement("span");
+            spanFinalParrafo.appendChild(document.createTextNode("Final del párrafo"));
+            parrafos[i].append(spanFinalParrafo);
+        }
+    </script>
+
+</body>
+
+</html>

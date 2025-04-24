@@ -1,0 +1,27 @@
+Una función que puede sumar dos o tres números dependiendo de cuántos argumentos reciba.
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimorfismo con AD-HOC</title>
+</head>
+
+<body>
+    <script>
+        function combinar(a, b) {
+            if (typeof a === "string" || typeof b === "string") {
+                return a.toString() + b.toString();
+            } else {
+                return a + b;
+            }
+        }
+
+        console.log(combinar(1, 2));       // 3
+        console.log(combinar("Hola, ", "mundo!")); // "Hola, mundo!"
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Desestructuración y rest parameters
+        // Dado un arreglo de números, desestructura los dos primeros elementos 
+        // el tercero no lo cojas y coloca el resto en una nuevo array (...spread)
+
+
+        let numeros = [5, 10, 15, 20, 25, 30];
+        let [num1, num2, ,...resto] = numeros;
+
+        console.log(num1, num2); // Debería mostrar 5 10
+        console.log(resto); // Debería mostrar [15, 20, 25, 30] 
+    </script>
+</body>
+
+</html>

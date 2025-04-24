@@ -1,0 +1,27 @@
+<!-- Intenta convertir una cadena a un número usando parseInt. 
+Si la conversión falla, lanza una excepción. -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        
+
+        try {
+            let num = prompt("Introduzca número:");
+
+            if (isNaN(num)) {
+                throw new Error('La conversión a número ha fallado');
+            }
+        } catch (error) {
+            alert(error.message);
+        }
+
+        console.log("Prueba")
+    </script>
+</body>
+
+</html>

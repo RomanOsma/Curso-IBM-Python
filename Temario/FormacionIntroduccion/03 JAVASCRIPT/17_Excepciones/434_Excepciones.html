@@ -1,0 +1,34 @@
+<!-- el bloque catch en JavaScript no detiene la ejecución del programa por sí mismo. 
+Su propósito es manejar los errores que pueden ocurrir en el bloque try. 
+Cuando se produce un error en el bloque try, la ejecución se desvía al bloque 
+catch correspondiente. Después de que el bloque catch ha terminado de ejecutarse, 
+el programa continúa normalmente a menos que se haya lanzado un nuevo error en 
+el bloque catch.
+
+Por lo tanto, si manejas el error en el bloque catch y no lanzas ningún nuevo error, 
+el programa no se detendrá y continuará su ejecución. Sin embargo, si lanzas un 
+nuevo error en el bloque catch y no lo capturas en un bloque catch externo, 
+entonces sí se detendrá el programa. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+
+        try {
+            
+            throw new Error('Error en el bloque try');
+        } catch (error) {
+            console.error('Manejando el error:', error);
+            // No se lanza ningún nuevo error aquí, por lo que el programa no se detiene
+        }
+
+        console.log('El programa continúa después del bloque try-catch');
+
+
+    </script>
+</body>
+
+</html>

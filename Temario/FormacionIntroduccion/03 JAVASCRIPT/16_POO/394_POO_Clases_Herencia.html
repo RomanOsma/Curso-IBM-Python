@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+
+<body>
+    <script>
+
+        class Abuelo {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+            get datos() {
+                return "Nombre: " + this.nombre + "\nEdad: " + this.edad;
+            }
+        }
+
+
+        class Hommer extends Abuelo {
+            constructor(nombre, edad, trabajo) {
+                super(nombre, edad);
+                // this.nombre = nombre;
+                // this.edad = edad;
+                this.trabajo = trabajo;
+            }
+
+
+        }
+
+        class Bart extends Hommer {
+            constructor(nombre, edad, trabajo, juguete) {
+                super(nombre, edad, trabajo);
+                this.juguete = juguete;
+            }
+
+
+        }
+
+        const AbeSimpson = new Abuelo("Abraham", 90);
+        console.log(AbeSimpson.datos);
+
+        const homerSimpson = new Hommer("Hommer", 50, "operario en central nuclear");
+        console.log(homerSimpson.datos);
+
+        const BartSimpson = new Bart("Bart", 12, "estudiante", "monopatín");
+        console.log(BartSimpson.datos);
+
+
+
+    </script>
+</body>
+
+</html>

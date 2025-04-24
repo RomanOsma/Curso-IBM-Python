@@ -1,0 +1,57 @@
+<!-- Crea una aplicación web interactiva para gestionar una lista de tareas
+La aplicación permitirá a los usuarios añadir nuevas tareas a una lista 
+y eliminarlas una vez completadas. 
+
+- La página debe contener un campo de texto donde los usuarios puedan escribir 
+  el nombre de una nueva tarea y un botón para añadirla a la lista.
+- Al presionar el botón de "Añadir Tarea", la nueva tarea debe aparecer en una 
+  lista en la parte inferior de la página. 
+- Asegúrate de que el campo de texto se limpie después de cada inserción.
+- Cada tarea en la lista debe tener un botón de "Eliminar" asociado que, 
+  al ser presionado, eliminará la tarea de la lista. -->
+  
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+</head>
+
+<body>
+    <input type="text" id="nuevaTareaInput" placeholder="Añade una nueva tarea">
+    <button id="añadirTarea">Añadir Tarea</button>
+    <ul id="listaTareas"></ul>
+
+    <script>
+        class ListaTareas {
+            constructor() {
+                this.listaElement = document.getElementById('listaTareas');
+                document.getElementById('añadirTarea').addEventListener('click', () => this.añadirTarea());
+            }
+
+            añadirTarea() {
+                const tareaInput = document.getElementById('nuevaTareaInput');
+                const tareaTexto = tareaInput.value.trim();
+                if (tareaTexto) {
+                    const tareaElement = document.createElement('li');
+                    tareaElement.textContent = tareaTexto;
+
+                    const eliminarBtn = document.createElement('button');
+                    eliminarBtn.textContent = 'Eliminar';
+                    eliminarBtn.onclick = function () {
+                        this.parentNode.remove();
+                    };
+                    tareaElement.appendChild(eliminarBtn);
+
+                    this.listaElement.appendChild(tareaElement);
+                    tareaInput.value = ''; // Limpiar input
+                }
+            }
+        }
+
+        new ListaTareas();
+    </script>
+</body>
+
+</html>

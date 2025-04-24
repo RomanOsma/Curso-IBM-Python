@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      position: absolute;
+      top: 0;
+      opacity: 1;
+      width: 300px;
+      transition: opacity 2s ease-in-out 1s, width 5s linear;
+
+      
+      /* Para opacity 2s ease-in-out 1s:
+
+        transition-property: opacity
+        transition-duration: 2s
+        transition-timing-function: ease-in-out
+        transition-delay: 1s
+
+
+        Para width 5s linear:
+
+        transition-property: width
+        transition-duration: 5s
+        transition-timing-function: linear
+        transition-delay: no especificado, por lo que es 0s por defecto. */
+
+
+
+
+    }
+
+
+    img:hover {
+      opacity: 0;
+      width: 500px;
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="assets/Imagenes/dragon.png" alt="" width="500px">
+
+</body>
+
+</html>

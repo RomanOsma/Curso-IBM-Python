@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Generar una Serie de Fibonacci: 
+        // Escribe una función recursiva que genere una serie de Fibonacci 
+        // hasta el n-ésimo término.
+
+
+        function fibonacci(n) {
+            // Casos base: fibonacci(0) es 0 y fibonacci(1) es 1.
+            if (n <= 1) {
+                return n;
+            }
+            // Llamada recursiva: sumamos los dos términos anteriores de la serie.
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+        // Uso de la función para generar los primeros 10 términos
+        for (let i = 0; i < 10; i++) {
+            console.log(fibonacci(i));
+        }
+
+        // Explicación:
+        // Los casos base son fibonacci(0) que es 0 y fibonacci(1) que es 1.
+        // Para otros valores de n, la función se llama a sí misma dos veces, una 
+        // para n - 1 y otra para n - 2, y suma sus resultados.
+        // Esto refleja la definición de la serie de Fibonacci, donde cada término es 
+        // la suma de los dos anteriores.
+        // La recursión se detiene cuando se alcanzan los casos base para n - 1 y n - 2.
+    </script>
+</body>
+
+</html>

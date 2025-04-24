@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Eliminar un Elemento del DOM: 
+
+        // Método tradicional:
+        // Elimina un elemento con id elementoParaEliminar.
+
+        const elemento = document.getElementById('elementoParaEliminar');
+        elemento.parentNode.removeChild(elemento);
+
+        // Explicación: 
+        // Se selecciona el elemento que se desea eliminar, se accede 
+        // a su elemento padre con `parentNode` y se utiliza `removeChild` 
+        // para eliminar el elemento seleccionado del DOM.
+
+        // Método desde ESC6
+
+        document.getElementById('elementoParaEliminar').remove();
+
+        // Explicación: 
+        // Se selecciona el elemento con getElementById y se llama al 
+        // método remove() en él. Este método elimina el elemento del 
+        // DOM sin necesidad de referenciar al nodo padre o usar removeChild.
+        // El método remove() es muy conveniente y reduce la cantidad de 
+        // código necesario para eliminar un elemento. 
+        // Importante: este método no es compatible con Internet Explorer. 
+        // Si necesitas soportar navegadores más antiguos, es posible que debas 
+        // usar el método parentNode.removeChild() como se mostró en el ejercicio original. 
+    </script>
+</body>
+
+</html>

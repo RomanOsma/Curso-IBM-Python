@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Desestructuración en Ciclos: 
+        // Utiliza un ciclo for...of para desestructurar nombre y edad de 
+        // cada objeto en el arreglo usuarios.
+
+
+        const usuarios = [
+            { id: 1, nombre: 'Ana', edad: 22 },
+            { id: 2, nombre: 'Luis', edad: 30 },
+            { id: 3, nombre: 'Clara', edad: 27 }
+        ];
+
+        for (const { nombre, edad } of usuarios) {
+            console.log(`Nombre: ${nombre}, Edad: ${edad}`);
+        }
+
+    </script>
+</body>
+
+</html>

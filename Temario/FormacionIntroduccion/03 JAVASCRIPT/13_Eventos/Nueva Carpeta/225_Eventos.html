@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario</title>
+</head>
+
+<body>
+    <!-- Validación de Formulario
+    Enunciado: Valida que un campo de texto de un formulario no esté vacío antes de enviarlo. -->
+
+    <form id="myForm">
+        <input type="text" id="myInput" placeholder="Escribe algo aquí">
+        <input type="submit" value="Enviar">
+    </form>
+    <p id="errorMessage" style="color: red;"></p>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            let inputValue = document.getElementById('myInput').value;
+            if (inputValue.trim() === '') {
+                document.getElementById('errorMessage').textContent = 'El campo no puede estar vacío.';
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

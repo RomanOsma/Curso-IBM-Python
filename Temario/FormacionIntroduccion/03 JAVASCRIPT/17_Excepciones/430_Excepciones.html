@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Excepciones</title>
+</head>
+
+<body>
+    <script>
+        try {
+           
+            throw new Error('Error creado manualmente');
+
+        } catch (error) {
+            console.log(error.name);    // Esto imprimirá "Error"
+            console.log(error.message); // Esto imprimirá "¡Oh no, algo salió mal!"
+            console.log(error.stack);   // Esto imprimirá la pila de llamadas en el momento en que se lanzó el error
+        }
+
+        console.log("Continuamos con el programa");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!-- 
+     *****************************************
+     *          EJEMPLOS DE SELECTORES       *
+     ***************************************** 
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Selector de tipo. */
+        p {
+            color: red;
+        }
+
+        /* Selector de clase */
+        .clase {
+            background-color: yellow;
+        }
+
+        /* Selector de ID */
+        #id {
+            font-size: 30px;
+        }
+
+        /* Selector universal */
+        * {
+            margin: 0;
+        }
+
+        /* Selector de atributo */
+        a[target] {
+            color: purple;
+        }
+
+        /* Selector de atributo con valor específico */
+        a[href="https://www.bing.com"] {
+            color: green;
+        }
+
+        /* Selector de descendiente */
+        div p {
+            text-align: center;
+        }
+
+        /* Selector de hijo */
+        div>p {
+            line-height: 1.6;
+        }
+
+        /* Selector adyacente */
+        h1+p {
+            font-style: italic;
+        }
+
+        /* Selector de hermano */
+        h1~p {
+            font-weight: bold;
+        }
+
+        /* Pseudo-clases */
+        p:first-child {
+            text-decoration: underline;
+        }
+
+        p:last-child {
+            text-decoration: line-through;
+        }
+
+        p:nth-child(2) {
+            color: blue;
+        }
+
+        p:nth-last-child(2) {
+            color: pink;
+        }
+
+        p:nth-of-type(2) {
+            font-size: 20px;
+        }
+
+        p:nth-last-of-type(2) {
+            font-size: 25px;
+        }
+
+        p:first-of-type {
+            text-transform: uppercase;
+        }
+
+        p:last-of-type {
+            text-transform: lowercase;
+        }
+
+        p:only-child {
+            background-color: lightblue;
+        }
+
+        p:only-of-type {
+            background-color: lightgreen;
+        }
+
+        p:empty {
+            display: none;
+        }
+
+        a:not([href]) {
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Encabezado</h1>
+
+    <p class="clase">Este es un párrafo con una clase.</p>
+
+    <p id="id">Este es un párrafo con un ID.</p>
+
+    <a href="#" target="_blank">Este es un enlace con un atributo target.</a>
+
+    <a href="https://www.bing.com">Este es un enlace a Bing.</a>
+
+    <div>
+        <p>Este es un párrafo descendiente de un div.</p>
+    </div>
+
+    <div>
+        <p>Este es un párrafo hijo de un div.</p>
+    </div>
+
+    <h1>Encabezado</h1>
+    <p>Este es un párrafo adyacente a un h1.</p>
+
+    <h1>Encabezado</h1>
+    <p>Este es un párrafo hermano de un h1.</p>
+
+    <p>Este es el primer hijo del body.</p>
+
+    <p>Este es el último hijo del body.</p>
+
+    <p></p>
+
+    <a>Este es un enlace sin href.</a>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Escribe una función constructora Libro que cree objetos libro con 
+        // propiedades titulo, autor y año.Crea dos instancias de Libro y muestra 
+        // sus propiedades.
+
+
+        function Libro(titulo, autor, año) {
+            this.titulo = titulo;
+            this.autor = autor;
+            this.año = año;
+        }
+        const libro1 = new Libro('El Quijote', 'Miguel de Cervantes', 1605);
+        const libro2 = new Libro('1984', 'George Orwell', 1949);
+        console.log(libro1, libro2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!--
+
+1- Crear un programa en JavaScript que contenga una clase padre llamada Usuario con 
+los atributos nombre e ID, y un método para mostrar datos, seguido por una clase 
+hija llamada UsuarioVIP que hereda todo del padre tal cual. 
+
+2 - Crear en la clase hija unos atributos propios "login" y "password". Y un método de mostrar 
+datos que implemente el método del padre añadiendo  "login" y "password" del hijo.
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super</title>
+</head>
+
+<body>
+    <script>
+
+class Usuario {
+  constructor(nombre, ID) {
+    this.nombre = nombre;
+    this.ID = ID;
+  }
+
+  mostrarDatos() {
+    return `Nombre: ${this.nombre}\nID: ${this.ID}`;
+  }
+}
+
+class UsuarioVIP extends Usuario {
+  constructor(nombre, ID, login, password) {
+    super(nombre, ID); // Llama al constructor de la clase padre
+    this.login = login;
+    this.password = password;
+  }
+
+  mostrarDatos() {
+    // Llama al método mostrarDatos del padre y añade información de login y password
+    const datosPadre = super.mostrarDatos();
+    console.log(`Usuario VIP:\n${datosPadre}\nLogin:${this.login}\nPassword:${this.password}`);
+  }
+}
+
+// Ejemplo de uso
+const usuario = new Usuario("Juan Perez", 1234);
+console.log(usuario.mostrarDatos());
+
+const usuarioVip = new UsuarioVIP("Ana Gomez", 5678, "ana_gomez", "contraseña123");
+usuarioVip.mostrarDatos();
+
+    </script>
+</body>
+
+</html>

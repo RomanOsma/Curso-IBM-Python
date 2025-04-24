@@ -1,0 +1,35 @@
+html {
+  margin: 0;
+  padding: 0;
+  font: bold normal 30px Arial, Helvetica, sans-serif;
+}
+
+#pagina {
+  width: 600px;
+  margin: 0 auto;
+  background: #ddd;
+}
+
+p {
+  padding: 10px;
+  color: #ddd;
+  display: block;
+  margin: 0;
+}
+
+p#uno {
+  text-shadow: #000 0px 0px 30px;
+}
+
+p#dos {
+  text-shadow: #fff -2px 2px 1px, #888 2px 2px 1px;
+}
+
+p#tres {
+  text-shadow: #fff -2px 0px 3px, #aaa 0px -2px 3px, #ccc 0px 2px 3px, #777 2px 0px 3px;
+}
+
+p#cuatro {
+  text-shadow: #888 4px -4px 2px;
+  color: #fa8;
+}

@@ -1,0 +1,47 @@
+<!-- Implementar una clase ConversorTemperatura que incluya métodos para convertir 
+de Celsius a Fahrenheit y viceversa. La clase debe permitir que el usuario 
+ingrese una temperatura y seleccione la conversión deseada. 
+Las fórmulas necesarias son:
+Pasar de Celsius a Fahrenheit: (celsius * 9 / 5) + 32
+Pasar de Fahrenheit a Celsius: (fahrenheit - 32) * 5 / 9
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO - Constructores</title>
+</head>
+
+<body>
+    <script>
+        class ConversorTemperatura {
+            celsiusAFahrenheit(celsius) {
+                return (celsius * 9 / 5) + 32;
+            }
+
+            fahrenheitACelsius(fahrenheit) {
+                return (fahrenheit - 32) * 5 / 9;
+            }
+        }
+
+        // Simulación de entrada del usuario
+        const temperatura = parseFloat(prompt("Ingrese la temperatura:"));
+        const unidad = prompt("Ingrese la unidad de origen (C para Celsius, F para Fahrenheit):");
+
+        if (unidad.toUpperCase() === "C") {
+            const temp = new ConversorTemperatura();
+            alert(`${temperatura}°C equivale a ${temp.celsiusAFahrenheit(temperatura).toFixed(2)}°F`);
+        } else if (unidad.toUpperCase() === "F") {
+            const temp = new ConversorTemperatura();
+            alert(`${temperatura}°F equivale a ${temp.fahrenheitACelsius(temperatura).toFixed(2)}°C`);
+        } else {
+            alert("Unidad no reconocida.");
+        }
+
+    </script>
+</body>
+
+</html>

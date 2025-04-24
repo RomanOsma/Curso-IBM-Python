@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efecto Parallax con CSS</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .parallax {
+    /* La imagen de fondo se aplica aquí */
+    background-image: url('assets/Imagenes/paisaje5.jpg');
+
+    /* Se establece la altura del contenedor para simular espacio para hacer scroll */
+    min-height: 500px; 
+
+    /* Se crea el efecto parallax con position fixed */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .content {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    height: 1000px; /* Altura para hacer scroll y ver el efecto */
+  }
+</style>
+</head>
+<body>
+
+<div class="parallax"></div>
+<div class="content">
+  <h1>Contenido Principal</h1>
+  <p>Este es un ejemplo de texto que se desplaza sobre la imagen con efecto parallax. Puedes agregar más contenido aquí para hacer más largo el scroll y observar el efecto.</p>
+</div>
+
+<div class="content">
+  <h1>Contenido Principal</h1>
+  <p>Este es un ejemplo de texto que se desplaza sobre la imagen con efecto parallax. Puedes agregar más contenido aquí para hacer más largo el scroll y observar el efecto.</p>
+</div>
+
+</body>
+</html>

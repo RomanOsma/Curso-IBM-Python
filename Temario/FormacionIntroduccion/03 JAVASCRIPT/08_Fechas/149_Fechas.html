@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Documento sin título</title>
+</head>
+
+<body>
+    <script>
+
+// Calcular la diferencia en días entre dos fechas: 
+// Enunciado: Calcula la cantidad de días entre la fecha actual y 
+// el 1 de enero de 2025.
+
+
+        let hoy = new Date();
+        let fechaFutura = new Date('2025-01-01');
+        let diferencia = fechaFutura - hoy; // Diferencia en milisegundos
+        let dias = diferencia / (1000 * 60 * 60 * 24);
+        console.log(Math.ceil(dias));
+
+    </script>
+</body>
+
+</html>

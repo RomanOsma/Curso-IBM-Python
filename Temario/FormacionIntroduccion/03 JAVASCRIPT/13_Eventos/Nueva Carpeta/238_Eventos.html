@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle de Lista Desplegable</title>
+</head>
+
+<body>
+    <!-- Toggle de Lista Desplegable
+    Enunciado: Crea un botón que muestre u oculte una lista desplegable al hacer clic. -->
+
+    <button id="toggleList">Mostrar/Ocultar Lista</button>
+    <ul id="dropdownList" style="display: none;">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <script>
+        document.getElementById('toggleList').addEventListener('click', function() {
+            let dropdownList = document.getElementById('dropdownList');
+            dropdownList.style.display = dropdownList.style.display === 'none' ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // crear un script que pida al usuario un número indeterminado de números 
+        // que se irán metiendo en un array. El usuario estará metiendo números 
+        // por prompt hasta que le de al enter y no introduzca más. En ese momento 
+        // se imprimirá el array resultante. Buscaremos "1234" 
+        // e imprimiremos si existe y en tal caso el lugar que ocupa en el array.
+
+
+
+        var numeros = [];
+        var entrada;
+
+        while (true) {
+            entrada = prompt("Introduce un número o presiona Enter sin escribir nada para terminar:");
+            if (entrada === "" || entrada === null) {
+                break; // Salir del bucle si el usuario presiona Enter sin introducir nada
+            }
+            numeros.push(entrada);
+        }
+
+        console.log("Array resultante:", numeros);
+
+        // Buscar "admin" y "1234" en el array
+        var palabrasABuscar = ["admin", "1234"];
+
+        for (var i = 0; i < palabrasABuscar.length; i++) {
+            var indice = numeros.indexOf(palabrasABuscar[i]);
+            
+            if (indice !== -1) {
+                console.log("La palabra", palabrasABuscar[i], "existe en el array y ocupa la posición:", indice);
+            } else {
+                console.log("La palabra", palabrasABuscar[i], "no existe en el array.");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

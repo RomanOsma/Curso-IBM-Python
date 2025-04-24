@@ -1,0 +1,40 @@
+<!-- Crea un archivo HTML básico con un título y cuatro botones.
+Cada botón debe tener su propio controlador de eventos onclick que llame a una 
+función JavaScript diferente.
+
+Las funciones deben hacer lo siguiente:
+La primera función debe navegar a la página anterior del historial de navegación.
+La segunda función debe navegar a la siguiente página del historial de navegación.
+La tercera función debe navegar dos páginas atrás en el historial de navegación.
+La cuarta función debe navegar dos páginas adelante en el historial de navegación. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Historial de navegación con JavaScript</h1>
+
+    <button onclick="goBack()">Atrás</button>
+    <button onclick="goForward()">Adelante</button>
+    <button onclick="goToPage(-2)">Ir 2 páginas atrás</button>
+    <button onclick="goToPage(2)">Ir 2 páginas adelante</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+
+        function goToPage(n) {
+            history.go(-1);
+        }
+    </script>
+
+</body>
+
+</html>

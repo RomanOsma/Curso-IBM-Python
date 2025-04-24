@@ -1,0 +1,29 @@
+<!-- Valida un formulario antes de su envío, utilizando callbacks para las 
+validaciones específicas. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Validación de Formulario con Callback</title>
+</head>
+
+<body>
+    <form id="miFormulario">
+        Email: <input type="email" id="emailInput" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        document.getElementById('miFormulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar el envío real del formulario
+            const email = document.getElementById('emailInput').value;
+            if (email.includes('@')) {
+                alert('Email válido.');
+            } else {
+                alert('Email inválido.');
+            }
+        });
+    </script>
+</body>
+
+</html>

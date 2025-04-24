@@ -1,0 +1,83 @@
+<!-- Desarrolla una clase abstracta Notificacion que tenga un método abstracto enviar(). 
+Esta clase servirá como base para diferentes tipos de notificaciones. 
+Crea tres clases derivadas: NotificacionEmail, NotificacionSMS, y NotificacionApp. 
+Cada una de estas clases debe implementar el método enviar(), mostrando un 
+mensaje que indique el tipo de notificación enviada y a quién. 
+Por ejemplo, el método enviar() en NotificacionEmail debe imprimir 
+"Enviando email a [direccion] con el mensaje [mensaje]". -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Abstract</title>
+</head>
+
+<body>
+    <script>
+        class Notificacion {
+            constructor() {
+
+                if (new.target === Notificacion) {
+                    throw new Error("La clase Notificacion es abstracta y no puede ser instanciada.");
+                }
+            }
+
+            enviar() {
+                throw new Error("El método enviar() debe ser implementado por la subclase.");
+            }
+        }
+
+        class NotificacionEmail extends Notificacion {
+            constructor(direccion, mensaje) {
+                super();
+                this.direccion = direccion;
+                this.mensaje = mensaje;
+            }
+
+            enviar() {
+                console.log(`Enviando email a ${this.direccion} con el mensaje: '${this.mensaje}'`);
+            }
+        }
+
+        class NotificacionSMS extends Notificacion {
+            constructor(numero, mensaje) {
+                super();
+                this.numero = numero;
+                this.mensaje = mensaje;
+            }
+
+            enviar() {
+                console.log(`Enviando SMS al número ${this.numero} con el mensaje: '${this.mensaje}'`);
+            }
+        }
+
+        class NotificacionApp extends Notificacion {
+            constructor(usuario, mensaje) {
+                super();
+                this.usuario = usuario;
+                this.mensaje = mensaje;
+            }
+
+            enviar() {
+                console.log(`Enviando notificación a la app del usuario ${this.usuario} con el mensaje: '${this.mensaje}'`);
+            }
+        }
+
+        // Creando y enviando diferentes tipos de notificaciones
+        const email = new NotificacionEmail('usuario@example.com', '¡Bienvenido a nuestro servicio!');
+        email.enviar();
+
+        const sms = new NotificacionSMS('123456789', 'Su código de verificación es 1234.');
+        sms.enviar();
+
+        const notificacionApp = new NotificacionApp('Usuario123', 'Tiene un nuevo mensaje en su bandeja de entrada.');
+        notificacionApp.enviar();
+
+
+    </script>
+</body>
+
+</html>

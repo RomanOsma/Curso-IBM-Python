@@ -1,0 +1,45 @@
+<!-- Crea objetos para diferentes operaciones matemáticas (por ejemplo, Suma, Resta) 
+que tengan un método calcular(). 
+Implementa una función que ejecute la operación sin importar el tipo específico 
+de operación. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polimorfismo</title>
+
+
+</head>
+
+<body>
+
+    <script>
+function Suma(a, b) {
+  this.calcular = function() {
+    return a + b;
+  };
+}
+
+function Resta(a, b) {
+  this.calcular = function() {
+    return a - b;
+  };
+}
+
+function ejecutarOperacion(operacion) {
+  if (typeof operacion.calcular === 'function') {
+    console.log(operacion.calcular());
+  } else {
+    console.log("La operación no se puede ejecutar");
+  }
+}
+
+// Ejemplo de uso
+ejecutarOperacion(new Suma(5, 3));
+ejecutarOperacion(new Resta(10, 6));
+
+    </script>
+</body>
+
+</html>

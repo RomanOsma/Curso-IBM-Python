@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Partiendo de un DIV que tenga 3 clases a la vez:
+
+        - Crear dos botones: Uno para añadir clase y otro para 
+          quitar clase.
+        - El botón de añadir clase: Añade una nueva clase al 
+          elemento de forma que tenga 4.
+        - El botón de borrar clase: Borra la primera clase que tubiese.
+
+    -->
+
+</head>
+
+<body>
+    <div id="page" class="clase1 clase2 clase3">Hola Mundo</div>
+
+    <script>
+
+        const element = document.querySelector("#page");
+
+        element.classList; // clase1 clase2 clase3
+
+        element.classList.toggle("info"); 
+        console.log(element.classList); 
+
+        element.classList.toggle("info"); 
+        console.log(element.classList); 
+
+    </script>
+
+</body>
+
+</html>

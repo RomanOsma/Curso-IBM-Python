@@ -1,0 +1,24 @@
+<!-- Crea un nuevo párrafo con el texto “Este es un nuevo párrafo.” y añádelo a un
+elemento div existente con el id “div1”. -->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="div1">
+        <h2>Elemento existente</h2>
+    </div>
+
+    <script>
+        // Ejercicio 1
+        var nuevoParrafo = document.createElement("p");
+        var texto = document.createTextNode("Este es un nuevo párrafo.");
+        nuevoParrafo.appendChild(texto);
+        var div = document.getElementById("div1");
+        div.appendChild(nuevoParrafo); 
+    </script>
+
+</body>
+
+</html>

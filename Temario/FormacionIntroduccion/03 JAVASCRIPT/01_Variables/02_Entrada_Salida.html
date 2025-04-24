@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrada y salida de datos</title>
+</head>
+
+<body>
+  <form id="miFormulario">
+    <input type="text" name="nombre">
+    <input type="email" name="correo">
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    document.getElementById("miFormulario").addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita que el formulario se envíe
+
+      var nombre = document.getElementsByName("nombre")[0].value;
+      var correo = document.getElementsByName("correo")[0].value;
+
+      console.log(nombre, correo);
+    });
+  </script>
+</body>
+
+</html>

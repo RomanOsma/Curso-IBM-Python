@@ -1,0 +1,36 @@
+
+
+html  {
+    margin: 0;
+    padding: 0;
+    font: bold normal 30px Arial, Helvetica, sans-serif;
+    }
+     
+  #pagina {
+    width: 600px;
+    margin: 0 auto;
+    background: #ddd;
+    }
+     
+  p {
+    padding: 10px;
+    color: #ddd;
+    display: block;
+    margin: 0;
+    }
+    
+    #uno{
+      text-shadow: #444 -1px -1px 0px, #fff 1px 1px 0px;
+      }
+       
+    #dos{
+      text-shadow: #fff -1px -1px 0px, #444 1px 1px 0px;
+      }
+       
+    #tres{
+      text-shadow: #00f -2px 2px 4px, #f60 -4px 4px 8px;
+      }
+       
+    #cuatro{
+      text-shadow: #00f -3px 3px 0px, #f00 3px -3px 0px;
+      }

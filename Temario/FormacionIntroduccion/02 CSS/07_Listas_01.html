@@ -1,0 +1,90 @@
+<!-- 
+     *****************************************
+     *     Lista con estilo armenian         *
+     ***************************************** 
+-->
+
+
+<!-- 
+     *****************************************
+     *    Ejemplos de estilos para Listas    *
+     ***************************************** 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: circle;
+        }
+
+        ul li:nth-child(2) {
+            list-style-type: square;
+        }
+
+        ul li:nth-child(3) {
+            list-style-type: disc;
+        }
+
+        ul li:nth-child(4) {
+            list-style-type: decimal;
+        }
+
+        ul li:nth-child(5) {
+            list-style-type: lower-alpha;
+        }
+
+        ul li:nth-child(6) {
+            list-style-type: upper-alpha;
+        }
+
+        ul li:nth-child(7) {
+            list-style-type: lower-roman;
+        }
+
+        ul li:nth-child(8) {
+            list-style-type: upper-roman;
+        }
+
+        ul li:nth-child(9) {
+            list-style: armenian;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Círculo</li>
+        <li>Cuadrado</li>
+        <li>Punto</li>
+        <li>Número decimal</li>
+        <li>Letra minúscula</li>
+        <li>Letra mayúscula</li>
+        <li>Número romano en minúscula</li>
+        <li>Número romano en mayúscula</li>
+        <li>Tipo Armenian</li>
+    </ul>
+    <br>
+    <p style="font-weight: bold;">Ejemplo de uso de list-style-position inside</p>
+    <ul style="list-style-type: disc;list-style-position: inside;">
+
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <br>
+    <p style="font-weight: bold;">Ejemplo de uso de list-style-position outside</p>
+    <ul style="list-style-type: disc;list-style-position: outside;">
+
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        //  utiliza bucles for anidados para generar las tablas de multiplicar del 1 al 5:
+
+        // Definimos el rango de las tablas de multiplicar
+        let tablaMinima = 1;
+        let tablaMaxima = 5;
+
+        // Bucle externo para iterar a través de cada tabla de multiplicar
+        
+        for (let i = 1; i <= 5; i++) {
+            console.log(`Tabla de multiplicar del ${i}:`);
+
+            // Bucle interno para calcular cada línea de la tabla de multiplicar actual
+            for (let j = 1; j <= 10; j++) {
+                console.log(`${i} x ${j} = ${i * j}`);
+            }
+            // Añadimos una línea en blanco para separar las tablas de multiplicar
+            console.log('');
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

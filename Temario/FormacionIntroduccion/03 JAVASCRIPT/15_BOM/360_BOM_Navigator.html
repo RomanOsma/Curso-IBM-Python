@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ubicación Actual</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script>
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    console.log("Ubicación actual del dispositivo:", position.coords);
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    var map = L.map('map').setView([latitude, longitude], 13);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                    }).addTo(map);
+                    L.marker([latitude, longitude]).addTo(map);
+                },
+                function (error) {
+                    console.error("Error al obtener la ubicación:", error.message);
+                }
+            );
+        } else {
+            console.log("Geolocalización no disponible en este navegador.");
+        }
+    </script>
+
+</body>
+
+</html>

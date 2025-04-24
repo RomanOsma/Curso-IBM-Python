@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, ... ... ... ... ... ... ... ... initial-scale=1.0">
+    <title>Teclas</title>
+</head>
+
+<body>
+    <!-- Teclas
+    Enunciado: Muestra un mensaje al presionar una tecla, al mantenerla presionada y al soltarla. -->
+
+    <input type="text" id="keyInput" onkeydown="showMessage('Tecla presionada')"
+        onkeypress="showMessage('Tecla mantenida')" onkeyup="showMessage('Tecla soltada')"
+        placeholder="Presiona una tecla">
+
+    <script>
+        function showMessage(message) {
+            console.log(message);
+        }
+    </script>
+</body>
+
+</html>

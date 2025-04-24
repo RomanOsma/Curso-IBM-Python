@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añade un atributo 'alt' a una imagen</title>
+</head>
+
+<body>
+    <div id="miElemento"><img id="miImagen" src="www.imagen.jpg" alt=""></div>
+    <script>
+        // Selecciona el elemento de imagen
+        let imagen = document.getElementById('miImagen');
+        // Usa setAttribute para añadir un texto alternativo a la imagen
+        imagen.setAttribute('alt', 'Una descripción de la imagen');
+    </script>
+</body>
+
+</html>

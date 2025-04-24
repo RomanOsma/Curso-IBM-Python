@@ -1,0 +1,54 @@
+<!-- Crea una superclase Jugador con un método jugar(). 
+Luego, define tres subclases: Futbolista, Basquetbolista, y Tenista, 
+cada una con su implementación de jugar(). 
+Implementa una función que reciba un Jugador y ejecute su método jugar(). -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polimorfismo </title>
+
+
+</head>
+
+<body>
+
+    <script>
+        class Jugador {
+            jugar() {
+                return "El jugador entra en juego";
+            }
+        }
+
+        class Futbolista extends Jugador {
+            jugar() {
+                return "El futbolista juega un partido de fútbol";
+            }
+        }
+
+        class Basquetbolista extends Jugador {
+            jugar() {
+                return "El basquetbolista juega un partido de baloncesto";
+            }
+        }
+
+        class Tenista extends Jugador {
+            jugar() {
+                return "El tenista juega un partido de tenis";
+            }
+        }
+
+        function ponerAJugar(jugador) {
+            console.log(jugador.jugar());
+        }
+
+        // Ejemplo de uso
+        ponerAJugar(new Futbolista());
+        ponerAJugar(new Basquetbolista());
+        ponerAJugar(new Tenista());
+
+    </script>
+</body>
+
+</html>

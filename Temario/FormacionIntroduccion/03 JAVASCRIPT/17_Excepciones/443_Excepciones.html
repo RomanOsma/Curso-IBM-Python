@@ -1,0 +1,53 @@
+<!-- Escribe una función llamada dividir que tome dos argumentos numéricos, a y b. 
+La función debe intentar dividir a entre b. Si b es igual a cero, lanza un 
+error con el mensaje “No se puede dividir por cero”. 
+Si no hay errores, la función debe devolver el resultado de la división.
+
+La función dividir debe seguir las siguientes reglas:
+
+Si b es igual a cero, lanza un error personalizado con el mensaje 
+“No se puede dividir por cero”.
+Si no hay errores, devuelve el resultado de la división.
+Independientemente de si se produjo un error o no, muestra un mensaje en 
+la consola indicando que la operación de división ha finalizado. -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Ejemplo: División segura
+        function dividir(a, b) {
+            try {
+                if (b === 0) {
+                    throw new Error("No se puede dividir por cero.");
+                }
+                return a / b;
+            } catch (error) {
+                console.error("Error:", error.message);
+            } finally {
+                console.log("Operación de división finalizada.");
+            }
+        }
+
+        // Prueba la función
+        console.log(dividir(10, 2)); // Resultado: 5
+        console.log(dividir(10, 0)); // Resultado: Error: No se puede dividir por cero.
+
+    </script>
+</body>
+
+</html>

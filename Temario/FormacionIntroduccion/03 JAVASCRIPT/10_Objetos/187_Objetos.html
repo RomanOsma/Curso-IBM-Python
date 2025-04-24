@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Desestructuración en Parámetros de Funciones: 
+        // Escribe una función que desestructure las propiedades color y 
+        // estado de un objeto pasado como parámetro.
+
+
+        function mostrarConfiguracion({ color, estado = 'activo' }) {
+            console.log(`Color: ${color}, Estado: ${estado}`);
+        }
+
+        mostrarConfiguracion(configuracion); // 'Color: azul, Estado: activo'
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir un objeto</title>
+</head>
+
+<body>
+    <script>
+        let persona = {
+            nombre: 'Juan',
+            apellido: 'Perez',
+            email: 'jperez@mail.com',
+            edad: 28,
+            nombreCompleto: function () {
+                return this.nombre + ' ' + this.apellido;
+            }
+        }
+
+        persona.tel = '55443322';
+        persona.tel = '44332211';
+
+        console.log(persona);
+
+        delete persona.tel;
+
+        console.log(persona);
+
+        //Concatenar cada valor de cada propiedad
+        console.log(persona.nombre + ', ' + persona.apellido);
+
+        //for in
+        for (nombrePropiedad in persona) {
+            console.log(persona[nombrePropiedad]);
+        }
+
+        //Pasando el objeto a array
+        let personaArray = Object.values(persona);
+        console.log(personaArray);
+
+        //Pasando el objeto a String
+        let personaString = JSON.stringify(persona);
+        console.log(personaString);
+
+        //Pasando el objeto a Map
+
+        // Convertimos el objeto a un array de arrays, donde cada subarray es un par 
+        // clave-valor del objeto. Luego, el constructor Map toma este array de 
+        // pares clave-valor y crea un nuevo Mapa.
+
+        let mapa = new Map(Object.entries(persona));
+        console.log(mapa);
+    </script>
+</body>
+
+</html>

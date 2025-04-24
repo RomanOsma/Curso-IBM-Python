@@ -1,0 +1,61 @@
+<!-- Crea un archivo HTML básico con un título, un par de formularios, algunos enlaces, 
+algunas imágenes y un botón.
+El botón debe tener un controlador de eventos onclick que llame a una función JavaScript.
+
+La función debe hacer lo siguiente:
+Mostrar el tipo de documento (doctype).
+Mostrar el título del documento.
+Mostrar todos los formularios presentes en el documento.
+Mostrar todos los enlaces presentes en el documento.
+Mostrar todas las imágenes presentes en el documento.
+Mostrar todas las cookies asociadas al documento. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practicando con las propiedades del objeto document en JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Practicando con las propiedades del objeto document en JavaScript</h1>
+
+    <form id="form1">
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+    </form>
+
+    <form id="form2">
+        <label for="lname">Apellido:</label><br>
+        <input type="text" id="lname" name="lname">
+    </form>
+
+    <a href="https://www.google.com">Enlace a Google</a>
+    <a href="https://www.bing.com">Enlace a Bing</a>
+
+    <img src="https://via.placeholder.com/150" alt="Imagen 1">
+    <img src="https://via.placeholder.com/150" alt="Imagen 2">
+    <img src="https://via.placeholder.com/150" alt="Imagen 1">
+    <img src="https://via.placeholder.com/150" alt="Imagen 2">
+
+    <button onclick="showDocumentInfo()">Mostrar información del documento</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function showDocumentInfo() {
+            var info = "";
+            info += "Tipo de documento: " + document.doctype.name + "<br>";
+            info += "Título del documento: " + document.title + "<br>";
+            info += "Número de formularios: " + document.forms + "<br>";
+            info += "Número de enlaces: " + document.links.length + "<br>";
+            info += "Número de imágenes: " + document.images.length + "<br>";
+            info += "Cookies: " + document.cookie;
+            document.getElementById("demo").innerHTML = info;
+        }
+    </script>
+
+</body>
+
+</html>

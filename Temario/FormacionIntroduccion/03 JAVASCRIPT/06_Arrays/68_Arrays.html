@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+// Invertir un string almacenado en un array: 
+// Crea un array donde cada elemento es una letra de un string. 
+// Utiliza un bucle para invertir el string y luego únelo de nuevo.
+
+
+// 1- Pasar el string a array
+// 2- invertirlo
+// 3- pasarlo a string y sacarlo por consola.
+
+
+let text = "HOLA";
+const stringArray = text.split("");
+console.log(stringArray);
+
+let stringInvertido = '';
+
+for (let i = stringArray.length - 1; i >= 0; i--) {
+  stringInvertido += stringArray[i];
+}
+
+console.log(stringInvertido); // Debería imprimir "aloh"
+
+
+    </script>
+</body>
+
+</html>

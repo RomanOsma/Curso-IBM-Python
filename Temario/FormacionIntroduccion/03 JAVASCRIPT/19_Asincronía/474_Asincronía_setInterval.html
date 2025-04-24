@@ -1,0 +1,28 @@
+<!-- actualizar dinámicamente la hora mostrada en una página web cada segundo, 
+creando un reloj en vivo -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+
+<body>
+    <h2 id="reloj"></h2>
+    <script>
+        function actualizarHora() {
+            const ahora = new Date();
+            const tiempo = ahora.toLocaleTimeString();
+            document.getElementById('reloj').innerText = tiempo;
+        }
+
+        // Actualizar la hora cada segundo (1000 milisegundos)
+        setInterval(actualizarHora, 1000);
+       
+    </script>
+</body>
+
+</html>

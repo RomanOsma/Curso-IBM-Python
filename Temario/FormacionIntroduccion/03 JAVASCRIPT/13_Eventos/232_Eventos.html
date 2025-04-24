@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento ... ... ... beforeunload</title>
+</head>
+
+<body>
+    <!-- Evento beforeunload
+    Enunciado: Muestra un mensaje de confirmación al usuario antes de que abandone la página. -->
+
+    <script>
+        window.addEventListener('beforeunload', function (event) {
+            event.returnValue = '¿Seguro que quieres abandonar la página?';
+        });
+    </script>
+</body>
+
+</html>

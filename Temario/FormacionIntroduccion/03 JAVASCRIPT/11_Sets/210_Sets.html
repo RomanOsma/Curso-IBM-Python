@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+// ************************************************************* 
+// ***********  OPERACIONES FRECUENTES CON SETS*****************  
+// *************************************************************         
+
+        // Crear un nuevo Set
+        let mySet = new Set();
+
+        // Añadir elementos al Set
+        mySet.add(1);
+        mySet.add(5);
+        mySet.add('Texto');
+
+        // Mostrar el contenido del Set
+        console.log('Contenido del Set:', Array.from(mySet));
+
+        // Comprobar si un elemento está en el Set
+        console.log('¿El Set contiene el número 5?', mySet.has(5)); // true
+
+        // Obtener el tamaño del Set
+        console.log('Tamaño del Set:', mySet.size); // 3
+
+        // Eliminar un elemento del Set
+        mySet.delete(5);
+        console.log('Tamaño del Set después de eliminar:', mySet.size); // 2
+
+        // Iterar sobre los elementos del Set
+        console.log('Iterando sobre el Set:');
+        mySet.forEach(value => {
+            console.log(value);
+        });
+
+        // Convertir Set a Array
+        let arrayFromSet = Array.from(mySet);
+        console.log('Array desde Set:', arrayFromSet);
+
+        // Eliminar todos los elementos del Set
+        mySet.clear();
+        console.log('Tamaño del Set después de limpiar:', mySet.size); // 0
+
+        // Trabajar con la unión, intersección y diferencia de Sets
+        let setA = new Set([1, 2, 3, 4]);
+        let setB = new Set([3, 4, 5, 6]);
+
+        // Unión de dos Sets
+        let union = new Set([...setA, ...setB]);
+        console.log('Unión de A y B:', Array.from(union));
+
+        // Intersección de dos Sets
+        let intersection = new Set([...setA].filter(x => setB.has(x)));
+        console.log('Intersección de A y B:', Array.from(intersection));
+
+        // Diferencia de dos Sets (elementos en A que no están en B)
+        let difference = new Set([...setA].filter(x => !setB.has(x)));
+        console.log('Diferencia de A y B:', Array.from(difference));
+
+    </script>
+</body>
+
+</html>

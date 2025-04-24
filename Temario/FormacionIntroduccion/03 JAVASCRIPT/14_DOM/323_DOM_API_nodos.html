@@ -1,0 +1,72 @@
+<!-- tienes un elemento div existente con el id “div1” que contiene tres párrafos. 
+Tu tarea es realizar las siguientes operaciones:
+
+Añade un nuevo párrafo al final del div con el texto “Párrafo añadido”.
+Elimina el segundo párrafo del div.
+Reemplaza el primer párrafo con un nuevo párrafo que contenga el texto “Párrafo reemplazado”.
+Inserta un nuevo párrafo antes del último párrafo con el texto “Párrafo insertado”.
+Inserta un nuevo párrafo al final del div con el texto “Último párrafo añadido”. -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="div1">
+        <h2>Elemento existente</h2>
+        <p id="p1">Este es el primer párrafo.</p>
+        <p id="p2">Este es el segundo párrafo.</p>
+        <p id="p3">Este es el tercer párrafo.</p>
+        
+        
+    </div>
+
+    <script>
+
+        // Ejercicio
+        var div = document.getElementById("div1");
+
+        // 1. Añadir un nuevo párrafo al final
+        var parrafoAñadido = document.createElement("p");
+        parrafoAñadido.appendChild(document.createTextNode("Párrafo añadido"));
+        div.appendChild(parrafoAñadido);
+
+        // 2. Eliminar el segundo párrafo
+        // var segundoParrafo = document.getElementById("p2");
+        // var segundoParrafo = document.querySelector("#p2");
+        
+        var div = document.querySelector('div');
+        var segundoParrafo = div.querySelector("p:nth-of-type(2)");
+
+        div.removeChild(segundoParrafo);
+
+        // 3. Reemplazar el primer párrafo
+        var primerParrafo = document.getElementById("p1");
+
+        var parrafoReemplazado = document.createElement("p");
+        parrafoReemplazado.appendChild(document.createTextNode("Párrafo reemplazado"));
+
+        div.replaceChild(parrafoReemplazado, primerParrafo);
+
+        // 4. Insertar un nuevo párrafo antes del último
+        var ultimoParrafo = div.lastChild;
+
+        var parrafoInsertado = document.createElement("p");
+        parrafoInsertado.appendChild(document.createTextNode("Párrafo insertado"));
+
+        div.insertBefore(parrafoInsertado, ultimoParrafo);
+
+
+        // 5. Insertar un nuevo párrafo al final
+        var ultimoParrafoAñadido = document.createElement("p");
+        ultimoParrafoAñadido.appendChild(document.createTextNode("Último párrafo añadido"));
+
+        div.insertBefore(ultimoParrafoAñadido, null); 
+        // div.appendChild(ultimoParrafoAñadido);
+    </script>
+
+</body>
+
+</html>

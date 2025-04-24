@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO - Constructores</title>
+</head>
+
+<body>
+    <script>
+        class Persona {
+
+            constructor(nombreEst, edadEst) {
+                this.nombre = nombreEst;
+                this.edad = edadEst;
+                this.isUsuarioVIP = true;
+            }
+
+        }
+
+        let persona = new Persona('Juan', 30);
+        console.log(persona.nombre); // Imprime: Juan
+        console.log(persona.edad); // Imprime: 30
+        console.log(persona.isUsuarioVIP); 
+    </script>
+</body>
+
+</html>

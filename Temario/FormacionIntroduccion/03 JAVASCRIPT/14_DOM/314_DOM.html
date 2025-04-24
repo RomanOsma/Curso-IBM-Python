@@ -1,0 +1,40 @@
+Crea una tabla con el ID “miTabla” y una fila (<tr>) con varias celdas (<td>). 
+Luego, usa JavaScript para crear dos nuevas celdas y las inserta antes y 
+después de una celda existente en la fila usando .before() y .after().
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio 2: Insertar nuevas celdas antes y después de una celda existente en una tabla</h2>
+<table id="miTabla">
+  <tr>
+    <td id="celda1">Celda 1</td>
+    <td id="celda2">Celda 2</td>
+    <td id="celda3">Celda 3</td>
+  </tr>
+</table>
+
+<script>
+// Crea una nueva celda
+let nuevaCelda1 = document.createElement("td");
+nuevaCelda1.textContent = "Nueva celda antes";
+
+// Selecciona la celda antes de la cual quieres insertar la nueva celda
+let celdaReferencia = document.getElementById("celda2");
+
+// Usa .before() para insertar la nueva celda
+celdaReferencia.before(nuevaCelda1);
+
+// Crea otra nueva celda
+let nuevaCelda2 = document.createElement("td");
+nuevaCelda2.textContent = "Nueva celda después";
+
+// Usa .after() para insertar la nueva celda
+celdaReferencia.after(nuevaCelda2);
+</script>
+
+</body>
+</html>
+
+

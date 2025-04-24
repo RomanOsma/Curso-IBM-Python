@@ -1,0 +1,30 @@
+Crea un div con el ID “miDiv” y varios párrafos (<p>). 
+Luego, usa JavaScript para seleccionar un párrafo y 
+eliminarlo del div usando .removeChild.
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio 2: Eliminar un párrafo de un div</h2>
+<div id="miDiv">
+  <p id="parrafo1">Este es el párrafo 1.</p>
+  <p id="parrafo2">Este es el párrafo 2.</p>
+  <p id="parrafo3">Este es el párrafo 3.</p>
+</div>
+
+<script>
+// Selecciona el párrafo que quieres eliminar
+let parrafoParaEliminar = document.getElementById("parrafo2");
+
+// Selecciona el padre del párrafo
+let padre = parrafoParaEliminar.parentNode;
+
+// Usa .removeChild para eliminar el párrafo
+padre.removeChild(parrafoParaEliminar);
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,22 @@
+<!-- Crea una página web con un botón. 
+Cuando se hace clic en el botón, intenta cambiar el color de fondo de un elemento 
+que no existe. Si el elemento no existe, captura la excepción y muestra un mensaje 
+de error en la consola. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="myButton">Haz clic en mí</button>
+
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            try {
+                let nonExistentElement = document.getElementById('mybutton');
+                nonExistentElement.style.backgroundColor = 'blue';
+            } catch (error) {
+                console.error('Ha ocurrido un error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

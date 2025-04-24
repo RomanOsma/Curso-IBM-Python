@@ -1,0 +1,55 @@
+<!-- 
+    ***********************************************************************************
+    ***********************************************************************************   
+
+    Crear una página web en la que importaremos dos tipos de fuentes de google fonts, 
+    una mediante un LINK y una mediante un @import.
+    crearemos varios elementos P con su clase y su ID.
+    Crear una estructura de herencia en la que existan padres, hijos y hermanos.
+    Aplicaremos:
+    - la clase a los elementos que usen la fuente del LINK.
+    - Aplicaremos la fuente de @import a un elemento usando un selector ID. 
+
+    ***********************************************************************************
+    ***********************************************************************************  
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mi Página Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
+    <style>
+        /* Importar fuente con LINK */
+
+        @import url('https://fonts.googleapis.com/css2?family=Moirai+One&family=Rubik+Burned&display=swap');
+
+
+        /* Importar fuente con @import */
+
+
+        .encabezados {
+            font-family: Rubik Burned;
+        }
+
+        #hijo2 {
+            font-family: 'Moirai One', system-ui;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="padre">
+        <h2 class="encabezados">Hijo 1</h2>
+        <p>Este es el primer hijo del padre.</p>
+        <h2 class="encabezados">Hijo 2</h2>
+        <p id="hijo2">Este es el segundo hijo del padre.</p>
+    </div>
+</body>
+
+</html>

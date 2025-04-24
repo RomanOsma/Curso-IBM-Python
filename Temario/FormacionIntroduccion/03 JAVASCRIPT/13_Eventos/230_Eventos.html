@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento onselect</title>
+</head>
+
+<body>
+    <!-- Evento onselect
+    Enunciado: Muestra un mensaje al seleccionar texto en un campo de entrada. -->
+
+    <input type="text" onselect="showMessage()" placeholder="Selecciona texto aquí">
+
+    <script>
+        function showMessage() {
+            alert('¡Has seleccionado texto en el campo de entrada!');
+        }
+    </script>
+</body>
+
+</html>

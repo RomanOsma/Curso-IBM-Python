@@ -1,0 +1,40 @@
+<!-- Tienes un botón y un párrafo en tu página web. 
+Cuando haces clic en el botón, quieres que el párrafo 
+cambie de color. Sin embargo, también quieres saber si 
+el color ha cambiado o no. 
+
+Tu tarea es escribir un script que:
+
+- Añade o elimina una clase al párrafo cuando se hace 
+  clic en el botón.
+- Imprime un mensaje en la consola que indica si la 
+  clase se ha añadido o eliminado. -->
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Ejercicio de .classList.toggle()</title>
+      <style>
+          .colorCambiado {
+              color: red;
+          }
+      </style>
+  </head>
+  <body>
+      <button id="miBoton" onclick="cambiarColor()">Haz clic en mí</button>
+      <p id="miParrafo">¡Hola, mundo!</p>
+  
+      <script>
+          function cambiarColor() {
+              let resultado = document.querySelector('#miParrafo').classList.toggle('colorCambiado');
+              if(resultado) {
+                  console.log('La clase fue añadida, el color ha cambiado.');
+              } else {
+                  console.log('La clase fue eliminada, el color ha vuelto a la normalidad.');
+              }
+          }
+      </script>
+  </body>
+  </html>
+  
+  

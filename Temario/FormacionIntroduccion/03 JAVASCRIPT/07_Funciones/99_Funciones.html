@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+// Definición de las funciones con parámetros por defecto
+function sumar(a = 0, b = 0) {
+  return a + b;
+}
+
+function restar(a = 0, b = 0) {
+  return a - b;
+}
+
+function multiplicar(a = 1, b = 1) {
+  return a * b;
+}
+
+function dividir(a = 1, b = 1) {
+  if (b === 0) {
+    console.log("Error: No se puede dividir por cero.");
+    return null;
+  } else {
+    return a / b;
+  }
+}
+
+// Ejemplo de uso de las funciones con parámetros por defecto
+console.log(sumar(10)); // 10 + 0 = 10
+console.log(restar(5)); // 5 - 0 = 5
+console.log(multiplicar(3)); // 3 * 1 = 3
+console.log(dividir(10)); // 10 / 1 = 10
+console.log(dividir(10, 0)); // Error: No se puede dividir por cero.
+
+// También puedes llamar a las funciones sin ningún argumento
+console.log(sumar()); // 0 + 0 = 0
+console.log(multiplicar()); // 1 * 1 = 1
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreventDefault en Formulario</title>
+</head>
+
+<body>
+    <!-- PreventDefault en Formulario
+    Enunciado: Evita que un formulario se envíe al hacer clic en el botón de envío y muestra un mensaje en su lugar. -->
+
+    <form id="preventForm">
+        <input type="text" id="myInput" placeholder="Escribe algo aquí">
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('preventForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('message').textContent = 'El formulario no se enviará.';
+        });
+    </script>
+</body>
+
+</html>

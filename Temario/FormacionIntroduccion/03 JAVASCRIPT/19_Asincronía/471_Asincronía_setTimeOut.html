@@ -1,0 +1,27 @@
+<!-- crear un temporizador simple que ejecute una acción después de un intervalo de tiempo 
+    específico, como redirigir a otra página web después de un cierto período. -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeOut</title>
+</head>
+
+<body>
+    <script>
+
+        function redirigir() {
+            window.location.href = "https://www.google.com";
+        }
+
+        // Redirigir al usuario después de 10 segundos
+        setTimeout(redirigir, 3000);
+
+    </script>
+</body>
+
+</html>

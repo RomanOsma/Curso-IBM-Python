@@ -26,4 +26,8 @@ __pycache__/
 .env
 *.log
 *.zip
-
+*.csv
+*.tar.gz
+*.mp4
+*.avi
+*.mkv

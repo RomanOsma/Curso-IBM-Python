@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //      Escribe un programa en JavaScript que realice las siguientes operaciones:
+        //      1.	Pide al usuario que introduzca un número entero.
+        //      2.	Comprueba si el número es positivo, negativo o cero.
+        //      3. Si  el valor introducido no es un número , avisar al usuario
+        //      4.	Imprime el resultado en la consola.
+
+
+        var numeroElegido = Number(prompt("Introduzca el número."));
+
+        if (isNaN(numeroElegido)) {
+            console.log("El valor introducido no es un número.")
+        }
+        else if (numeroElegido > 0) {
+            console.log(`El número ${numeroElegido} es positivo`)
+        } else if (numeroElegido < 0) {
+            console.log("El número " + numeroElegido + " es negativo.")
+        } else if (numeroElegido == 0) {
+            console.log("El número es un cero.")
+        } else { console.log("El valor introducido no es válido") }
+
+    </script>
+</body>
+
+</html>

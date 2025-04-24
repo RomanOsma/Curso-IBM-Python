@@ -1,0 +1,47 @@
+
+<!-- Crer la clase Coche con un constructor con tres parámetros: marca, modelo, año
+Crear dos instancias de clase e imprimir su contenido.
+Añadir también un atributo estático tipoVehiculo = "coche". -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO - Constructores</title>
+</head>
+
+<body>
+    <script>
+
+        class Coche {
+
+            constructor(marca, modelo, año) {
+                this.marca = marca;
+                this.modelo = modelo;
+                this.año = año;
+                this.tipoVehiculo = "coche";
+            }
+
+            mostrarDetalles() {
+                console.log(`Marca: ${this.marca}, Modelo: ${this.modelo}, Año: ${this.año}, Tipo vehiculo:  ${this.tipoVehiculo}`);
+            }
+        }
+
+        // Crear un objeto coche
+        const miCoche = new Coche('Toyota', 'Corolla', 2020);
+        const miCoche2 = new Coche('Peugeot', '408', 2024);
+
+        // Mostrar los detalles del coche
+        miCoche.mostrarDetalles();
+        miCoche2.mostrarDetalles();
+
+        console.log(Coche);
+
+
+    </script>
+</body>
+
+</html>

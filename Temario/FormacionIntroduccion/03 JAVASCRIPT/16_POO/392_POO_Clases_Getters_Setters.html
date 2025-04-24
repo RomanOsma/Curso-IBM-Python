@@ -1,0 +1,79 @@
+<!-- Diseña una clase Producto que modele un producto con las propiedades de nombre, 
+precio base y porcentaje de descuento. Utiliza getters y setters para cada propiedad. 
+Asegúrate de que el porcentaje de descuento esté siempre entre 0% y 100%. 
+Además, implementa un método precioFinal() que calcule y retorne el precio 
+del producto después de aplicar el descuento. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters y Setters</title>
+</head>
+
+<body>
+    <script>
+        class Producto {
+            #nombre;
+            #precioBase;
+            #descuento; // Porcentaje entre 0 y 100
+
+            constructor(nombre, precioBase, descuento) {
+                this.#nombre = nombre;
+                this.#precioBase = precioBase;
+                this.descuento = descuento; // Utiliza el setter aquí para validar
+            }
+
+            get nombre() {
+                return this.#nombre;
+            }
+
+            // set nombre(nuevoNombre) {
+            //     this.#nombre = nuevoNombre;
+            // }
+
+            get precioBase() {
+                return this.#precioBase;
+            }
+
+            set precioBase(nuevoPrecio) {
+                if (nuevoPrecio >= 0) {
+                    this.#precioBase = nuevoPrecio;
+                } else {
+                    console.log("El precio base debe ser un número positivo.");
+                }
+            }
+
+            get descuento() {
+                return this.#descuento;
+            }
+
+            set descuento(nuevoDescuento) {
+                if (nuevoDescuento >= 0 && nuevoDescuento <= 100) {
+                    this.#descuento = nuevoDescuento;
+                } else {
+                    console.log("El descuento debe estar entre 0% y 100%.");
+                }
+            }
+
+            precioFinal() {
+                return (this.#precioBase * (1 - this.#descuento / 100)).toFixed(2);
+            }
+        }
+
+        // Solicitar las variables mediante prompt
+        const nombre = prompt("Introduce el nombre del producto:");
+        const precioBase = parseFloat(prompt("Introduce el precio base del producto:"));
+        const descuento = parseFloat(prompt("Introduce el descuento del producto (0-100):"));
+
+        // Crear una instancia de Producto y usarla
+        const miProducto = new Producto(nombre, precioBase, descuento);
+        console.log(`El artículo ${miProducto.nombre} valía ${miProducto.precioBase}€. Se le ha hecho un descuento del ${miProducto.descuento}% y se queda en ${miProducto.precioFinal()}€`); // Debería mostrar el precio con descuento
+
+
+    </script>
+</body>
+
+</html>

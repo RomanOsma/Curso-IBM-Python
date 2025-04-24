@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Clics</title>
+</head>
+
+<body>
+    <!-- Contador de Clics
+    Enunciado: Implementa un contador que incremente cada vez que hagas clic en un botón. -->
+
+    <button id="clickCounter">Clic me</button>
+    <p>Clics: <span id="clicksCount">0</span></p>
+    <script>
+        let count = 0;
+        document.getElementById('clickCounter').addEventListener('click', function () {
+            count++;
+            document.getElementById('clicksCount').textContent = count;
+        });
+    </script>
+</body>
+
+</html>

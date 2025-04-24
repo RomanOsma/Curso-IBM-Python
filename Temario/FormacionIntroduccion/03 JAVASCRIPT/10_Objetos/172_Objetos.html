@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Utiliza un bucle for...in para iterar sobre todas las propiedades 
+        // del objeto estudiante y muestra el nombre de la propiedad y su valor.
+        const estudiante = {
+            nombre: 'Laura',
+            asignaturas: ['Matemáticas', 'Historia', 'Física'],
+
+            direccion: {
+                calle: 'Mayor',
+                numero: 10,
+                ciudad: 'Madrid'
+            }
+        };
+
+        for (let i in estudiante) {
+            console.log(`${i}: ${estudiante[i]}`);
+        }
+    </script>
+</body>
+
+</html>

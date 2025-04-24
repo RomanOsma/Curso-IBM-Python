@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Crear una función que use un array para llenar argumentos de una función: 
+        // Escribe una función que tome un array y utilice sus elementos como 
+        // argumentos para llamar a otra función
+
+        function aplicarFuncion(fn, args) {
+            return fn(...args);
+        }
+
+        function sumar(x, y, z) {
+            return x + y + z;
+        }
+
+        var args = [1, 2, 3];
+        console.log(aplicarFuncion(sumar, args)); // Debería imprimir 6
+
+    </script>
+</body>
+
+</html>

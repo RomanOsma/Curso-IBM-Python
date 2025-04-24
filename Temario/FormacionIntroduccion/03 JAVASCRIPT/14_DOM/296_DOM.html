@@ -1,0 +1,52 @@
+<!-- Tienes un documento HTML con un párrafo. 
+Tu objetivo es escribir un script que reemplace el texto 
+interior del párrafo, el texto exterior del párrafo y 
+el HTML interior del párrafo. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="miParrafo">Mi párrafo.</p>
+
+    <script>
+        var miParrafo = document.getElementById('miParrafo');
+
+        miParrafo.innerText = 'Nuevo texto interior.';
+        miParrafo.outerText = 'Nuevo texto exterior.';
+        miParrafo.innerHTML = '<strong>Nuevo HTML interior.</strong>';
+
+        //Opción 2:
+        // miParrafo.textContent = 'Nuevo texto interior.';
+        // miParrafo.innerHTML = '<strong>Nuevo HTML interior.</strong>';
+    </script>
+
+</body>
+
+</html>

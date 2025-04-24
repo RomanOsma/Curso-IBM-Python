@@ -1,0 +1,76 @@
+<!-- crear un carrusel de imágenes que cambie automáticamente después de un intervalo de tiempo. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Imágenes</title>
+    <style>
+        #contenedor-carrusel {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #imagen-carrusel {
+            width: 100%;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor-carrusel">
+        <img id="imagen-carrusel" src="">
+    </div>
+
+    <script>
+        const imagenes = [
+            "https://via.placeholder.com/600x400/ff7f7f/333333?text=Imagen+1",
+            "https://via.placeholder.com/600x400/7f7fff/333333?text=Imagen+2",
+            "https://via.placeholder.com/600x400/7fff7f/333333?text=Imagen+3"
+        ];
+        let indiceActual = 0;
+
+        function cambiarImagen() {
+            const imagenCarrusel = document.getElementById('imagen-carrusel');
+            imagenCarrusel.style.opacity = '0';
+
+            setTimeout(() => {
+                // La utilización del operador módulo aquí es clave porque asegura que el valor 
+                // de indiceActual % imagenes.length siempre esté dentro del rango de índices 
+                // válidos para el array imagenes.
+                imagenCarrusel.src = imagenes[indiceActual % imagenes.length];
+                imagenCarrusel.style.opacity = '1';
+                indiceActual++;
+            }, 500);
+
+            setTimeout(cambiarImagen, 3000);
+        }
+
+        // Iniciar el carrusel
+        cambiarImagen();
+
+        //Explicación de porqué se usa el módulo resto de la división:
+//         Al incrementar indiceActual con cada cambio de imagen, eventualmente su valor 
+//         sobrepasará la longitud del arreglo imagenes. Sin embargo, necesitamos que 
+//         indiceActual se "reinicie" de alguna manera para que el carrusel pueda volver 
+//         a comenzar sin errores una vez que se alcance el final de las imágenes disponibles.
+
+// El uso de % imagenes.length logra exactamente eso: una vez que indiceActual es igual a la 
+// longitud de imagenes, el resultado de indiceActual % imagenes.length vuelve a 0. 
+// Si indiceActual continúa incrementándose, este cálculo produce un ciclo a través de los 
+// índices del arreglo imagenes de manera infinita, mostrando las imágenes en un bucle continuo.
+
+// Ejemplo
+// Si tienes 3 imágenes y indiceActual es 3, el cálculo sería 3 % 3, que da como resultado 0, 
+// reiniciando efectivamente la secuencia de imágenes. Si indiceActual es 4, entonces 4 % 3 
+// resulta en 1, y así sucesivamente, asegurando que siempre se seleccione un índice válido 
+// dentro del arreglo imagenes para mostrar en el carrusel.
+    </script>
+</body>
+
+</html>

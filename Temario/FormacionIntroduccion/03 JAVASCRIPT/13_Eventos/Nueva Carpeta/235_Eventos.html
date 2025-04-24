@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desactivar Botón</title>
+</head>
+
+<body>
+    <!-- Desactivar Botón
+    Enunciado: Crea un botón que se desactive a sí mismo cuando se hace clic en él. -->
+
+    <button id="disableButton">Desactívame</button>
+
+    <script>
+        document.getElementById('disableButton').addEventListener('click', function() {
+            this.disabled = true;
+        });
+    </script>
+</body>
+
+</html>

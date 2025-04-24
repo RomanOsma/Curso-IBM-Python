@@ -1,0 +1,34 @@
+<!-- Crear un script JavaScript que haga lo siguiente:
+
+- Obtén el contenido de texto del elemento con id “miDiv” 
+  usando .textContent y muestra el resultado en la consola.
+
+- Añadir un atributo hidden. Obtén el contenido de texto visible del mismo elemento 
+  usando .innerText y muestra el resultado en la consola. -->
+
+  <!DOCTYPE html>
+<html>
+
+<body>
+    <div id="miDiv">
+        <p>Hola a todos.</p>
+        <p>Me llamo <strong>Manolo</strong>. <span style="display: none">Nuevo mensaje</span></p>
+        <p hidden>Esto es un mensaje oculto.</p>
+    </div>
+
+    <script>
+        // Selecciona el elemento con id "miDiv"
+
+        var miDiv = document.querySelector('#miDiv');
+
+        // Usa .textContent para obtener todo el contenido de texto
+        var contenidoTexto = miDiv.textContent;
+        console.log('Contenido de texto con .textContent:', contenidoTexto);
+
+        // Usa .innerText para obtener solo el contenido de texto visible
+        var contenidoTextoVisible = miDiv.innerText;
+        console.log('Contenido de texto visible con .innerText:', contenidoTextoVisible);
+    </script>
+</body>
+
+</html>

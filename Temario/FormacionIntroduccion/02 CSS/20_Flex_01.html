@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .flex-container {
+            display: flex;
+            background-color: aqua;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            height: 500px;
+
+        }
+
+
+        .item {
+
+            margin: 10px;
+            padding: 10px;
+            font-size: 3.5em;
+            background: linear-gradient(rgb(63, 92, 218), rgb(250, 3, 242));
+            /* height: 50px; */
+
+        }
+
+        .item2{
+            margin: 10px;
+            padding: 10px;
+            font-size: 3.5em;
+            background-color: chartreuse;
+            align-self: flex-start;
+        }
+    </style> 
+</head>
+
+<body>
+    <!-- Lo primero siempre es tener un contenedor padre con display:Flex -->
+    <div class="flex-container">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item2">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+
+</html>

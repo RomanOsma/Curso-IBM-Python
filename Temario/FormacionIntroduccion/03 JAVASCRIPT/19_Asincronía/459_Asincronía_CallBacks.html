@@ -1,0 +1,27 @@
+<!-- Realiza operaciones matemáticas básicas pasando una operación como callback. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Operaciones Matemáticas con Callback</title>
+</head>
+
+<body>
+    <script>
+        function realizarOperacion(a, b, operacion, callback) {
+            const resultado = operacion(a, b);
+            callback(resultado);
+        }
+
+        realizarOperacion(5, 3, (x, y) => x + y, resultado => {
+            console.log(`Resultado de la suma: ${resultado}`);
+        });
+
+        realizarOperacion(5, 3, (x, y) => x - y, resultado => {
+            console.log(`Resultado de la resta: ${resultado}`);
+        });
+    </script>
+</body>
+
+</html>

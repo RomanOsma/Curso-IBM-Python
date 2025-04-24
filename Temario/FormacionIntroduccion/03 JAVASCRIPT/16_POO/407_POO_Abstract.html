@@ -1,0 +1,57 @@
+<!-- Diseña una clase abstracta Usuario con un método abstracto autenticar(). 
+Crea dos subclases: UsuarioAdmin y UsuarioInvitado. 
+La clase UsuarioAdmin debe implementar el método autenticar() verificando 
+una contraseña, mientras que UsuarioInvitado simplemente retorna true
+o en un concole.log() saca algo como "Bienvenido". -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Abstract</title>
+</head>
+
+<body>
+    <script>
+       class Usuario {
+            constructor() {
+                if (new.target === Usuario) {
+                    throw new Error("No se puede instanciar la clase abstracta Usuario.");
+                }
+            }
+
+            autenticar() {
+                throw new Error("El método autenticar() debe ser implementado por la subclase.");
+            }
+        }
+
+        class UsuarioAdmin extends Usuario {
+            constructor(contrasena) {
+                super();
+                this.contrasena = contrasena;
+            }
+
+            autenticar(contrasena) {
+                return this.contrasena === contrasena;
+            }
+        }
+
+        class UsuarioInvitado extends Usuario {
+            autenticar() {
+                return true; // Siempre autenticado.
+            }
+        }
+
+        let admin = new UsuarioAdmin("123456");
+        console.log(admin.autenticar("123456")); // Debe retornar true si la contraseña coincide.
+
+        let invitado = new UsuarioInvitado();
+        console.log(invitado.autenticar()); // Debe retornar true.
+
+    </script>
+</body>
+
+</html>

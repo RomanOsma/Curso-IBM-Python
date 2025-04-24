@@ -1,0 +1,56 @@
+
+<!-- Tienes un documento HTML con un botón y un párrafo. 
+El párrafo tiene inicialmente las clases “clase1”, “clase2” y “clase3”
+que le dan un color de texto azul, un tamaño de fuente de 20px 
+y un fondo amarillo, respectivamente. Tu tarea es escribir un 
+script de JavaScript que, cuando se haga clic en el botón, 
+reemplace las clases del párrafo a “clase4”, “clase5” y “clase6”, 
+cambiando el color del texto a rojo, el tamaño de la fuente a 
+30px y el fondo a verde claro, respectivamente.  -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cambiar varias clases</title>
+    <style>
+        .clase1 {
+            color: blue;
+        }
+        .clase2 {
+            font-size: 20px;
+        }
+        .clase3 {
+            background-color: yellow;
+        }
+        .clase4 {
+            color: red;
+        }
+        .clase5 {
+            font-size: 30px;
+        }
+        .clase6 {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <button id="miBoton">Haz clic aquí</button>
+    <p id="miParrafo" class="clase1 clase2 clase3">Este es un párrafo con las clases "clase1", "clase2" y "clase3".</p>
+
+    <script>
+        // Selecciona el botón y el párrafo
+        let boton = document.getElementById("miBoton");
+        let parrafo = document.getElementById("miParrafo");
+
+        // Añade un evento de clic al botón
+        boton.addEventListener("click", function() {
+            // Reemplaza las clases del párrafo cuando se hace clic en el botón
+            parrafo.classList.replace("clase1", "clase4");
+            parrafo.classList.replace("clase2", "clase5");
+            parrafo.classList.replace("clase3", "clase6");
+        });
+    </script>
+</body>
+</html>

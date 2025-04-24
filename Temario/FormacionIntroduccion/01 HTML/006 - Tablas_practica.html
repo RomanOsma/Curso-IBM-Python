@@ -1,0 +1,106 @@
+
+<!-- Crear una página WEB siguiendo los siguientes criterios:
+
+- Contendrá una tabla de 6x6 
+- El título de la tabla será "Horario escolar"
+- Las filas serán las horas de clase: 8:00, 9:00, 10:00, 11:00, 12:00
+- Las columnas serán los días de la semana.
+- Habrá unificación de celdas el lunes de (9:00-10:00)
+- Habrá unificación de celdas en las casillas (martes y miércoles) a las 11:00
+- La celda viernes-12:00 estará vacía 
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Horario Escolar</title>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <table border="1" >
+    <caption>Horario Escolar</caption>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+    </tr>
+
+    <tr>
+      <th>8:00</th>
+      <td>Clase 1</td>
+      <td>Clase 1</td>
+      <td>Clase 1</td>
+      <td>Clase 1</td>
+      <td>Clase 1</td>
+    </tr>
+
+    <tr>
+      <th>9:00</th>
+      <td rowspan="2">Clase 2 y 3</td>
+      <td>Clase 2</td>
+      <td>Clase 2</td>
+      <td>Clase 2</td>
+      <td>Clase 2</td>
+    </tr>
+
+    <tr>
+      <th>10:00</th>
+      <td>Clase 3</td>
+      <td>Clase 3</td>
+      <td>Clase 3</td>
+      <td>Clase 3</td>
+ 
+    </tr>
+
+    <tr>
+      <th>11:00</th>
+      <td>Clase 4</td>
+      <td colspan="2">Clase 4</td>
+      <td>Clase 4</td>
+      <td>Clase 4</td>
+
+    </tr>
+
+    <tr>
+      <th>12:00</th>
+      <td>Clase 5</td>
+      <td>Clase 5</td>
+      <td>Clase 5</td>
+      <td>Clase 5</td>
+      <td>&nbsp;</td>
+    </tr>
+
+
+
+  </table>
+</body>
+
+</html>
+
+
+

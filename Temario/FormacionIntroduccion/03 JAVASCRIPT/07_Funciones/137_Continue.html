@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Imprimir solo números impares y saltar los pares en un rango dado:
+        // Escribe un bucle for que itere a través de un rango de números enteros. 
+        // Tu objetivo es imprimir solo los números impares en ese rango y utilizar 
+        // continue para saltar los números pares sin imprimirlos.
+
+        var limiteInferior = 1;
+        var limiteSuperior = 20;
+
+        for (var numero = limiteInferior; numero <= limiteSuperior; numero++) {
+            if (numero % 2 === 0) {
+                continue; // Es un número par, salta a la siguiente iteración
+            }
+            // Si el número es impar, se imprimirá
+            console.log('Número impar:', numero);
+        }
+        
+    </script>
+</body>
+
+</html>

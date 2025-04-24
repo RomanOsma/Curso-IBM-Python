@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importación de Todo el Módulo</title>
+</head>
+
+<body>
+    <script type="module">
+
+    // Realizar una importación masiva del contenido de un
+    // archivo que tenga al manos una variable y una función
+    // y hacer uso de dichos elementos.
+
+
+
+
+
+
+
+        // Importamos todo el contenido del módulo constantes.js como un objeto
+        import * as constantes from './constantes.js';
+      
+        // Usamos las propiedades del objeto importado
+        console.log(`El número máximo es: ${constantes.NUM_MAX}`);
+        console.log(`¿Es 10 par?: ${constantes.esPar(10)}`);
+      </script>
+</body>
+
+</html>

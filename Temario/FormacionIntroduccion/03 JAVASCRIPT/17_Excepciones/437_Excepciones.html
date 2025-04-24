@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+
+        try {
+            
+            let objetoNoDefinido;
+            console.log(objetoNoDefinido.propiedad);
+            
+        } catch (error) {
+            if (error instanceof TypeError) {
+                console.error('Se ha producido un error de tipo:', error);
+            } else if (error instanceof ReferenceError) {
+                console.error('Se ha producido un error de referencia:', error);
+            } else {
+                throw new Error('Se ha producido un error no esperado');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

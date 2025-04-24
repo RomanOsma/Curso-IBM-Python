@@ -1,0 +1,54 @@
+<!-- Define una superclase Vehiculo con un método moverse(). 
+Luego, crea tres subclases: Coche, Bicicleta, y Barco, cada una con su 
+propia implementación de moverse(). 
+Usa una función que acepte un Vehiculo y ejecute su método moverse(). -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polimorfismo</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        class Vehiculo {
+            moverse() {
+                return "El vehículo se mueve";
+            }
+        }
+
+        class Coche extends Vehiculo {
+            moverse() {
+                return "El coche se desplaza por la carretera";
+            }
+        }
+
+        class Bicicleta extends Vehiculo {
+            moverse() {
+                return "La bicicleta avanza por el camino";
+            }
+        }
+
+        class Barco extends Vehiculo {
+            moverse() {
+                return "El barco navega por el agua";
+            }
+        }
+
+        function desplazarVehiculo(vehiculo) {
+            console.log(vehiculo.moverse());
+        }
+
+        // Ejemplo de uso
+        desplazarVehiculo(new Coche());
+        desplazarVehiculo(new Bicicleta());
+        desplazarVehiculo(new Barco());
+
+    </script>
+</body>
+
+</html>

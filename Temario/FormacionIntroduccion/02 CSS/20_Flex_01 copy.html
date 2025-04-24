@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            padding: 50px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        nav{
+            display: flex;
+            flex-direction: column;
+            background-color: burlywood;
+        }
+
+        nav a{
+            color: white;
+            padding: 15px 20px;
+            background-color: darkgoldenrod;
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        aside{
+            /* flex: 30%; */
+            background-color: aquamarine;
+            padding: 20px;
+        }
+
+        section{
+            /* flex: 70%; */
+            background-color: darkgreen;
+            padding: 20px;
+        }
+
+        footer{
+            padding: 20px;
+            background-color: darkviolet;
+            text-align: center;
+        }
+
+        @media screen and (max-width:700px){
+            nav, .row{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Título de la página web</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Servicios</a>
+        <a href="#">Productos</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <div class="row">
+        <aside>
+            <h2>Aside</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quod dolorem quos. Distinctio voluptas
+                recusandae sunt alias nisi rem perferendis vel quas laboriosam natus, reiciendis similique quaerat
+                pariatur unde, qui omnis voluptatibus amet soluta esse ex debitis assumenda minus. Vero, voluptas?
+                Voluptatem, saepe rerum eos obcaecati corrupti facilis sint esse, dignissimos et placeat beatae eaque
+                sed animi expedita iusto veritatis non tempora quas, praesentium dolor iste atque a sit libero.
+                Molestias possimus quod in perspiciatis ipsam voluptatem, esse velit labore iste nesciunt doloremque
+                dignissimos eveniet eligendi officiis consequuntur. </p>
+        </aside>
+        <section>
+            <h2>Section</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet maiores a magni vitae porro voluptatum
+                totam, ea eius laudantium! Perferendis, iure? Repellat cumque architecto eum neque ex eius doloremque
+                commodi eligendi recusandae? Officia similique culpa ab adipisci tenetur, maxime excepturi numquam.
+                Nemo, deserunt et ratione reprehenderit iusto dignissimos repellendus veritatis at porro sit quos, rerum
+                perferendis cumque eos ad nulla. Magnam praesentium natus cumque rem, quae non nobis officiis nemo saepe
+                reiciendis at, exercitationem commodi dolorem ex aperiam nam iure pariatur sapiente modi eveniet. Vero
+                deleniti nisi, repellat inventore, veniam, ad debitis necessitatibus ullam reprehenderit voluptas
+                ducimus placeat? Inventore, alias cupiditate deleniti dolores repellendus explicabo ipsa beatae animi,
+                voluptate consequuntur natus culpa, sed unde asperiores repellat et! Nesciunt ab, corporis fugit at
+                eaque deleniti, reprehenderit culpa reiciendis ex, atque distinctio eos debitis perferendis quo
+                consequuntur officiis magni libero laborum officia! Excepturi ab optio eaque nisi, repellendus saepe
+                dolores molestiae culpa tempore. Velit eius fugiat qui cum similique, temporibus placeat illo animi
+                quisquam veniam quae odit amet cumque molestiae doloribus laudantium quidem. Iusto doloremque voluptatem
+                omnis ut deserunt? Nisi nesciunt rerum quis obcaecati eum, quos quia nemo animi blanditiis. Soluta ab
+                ipsum dolore incidunt placeat maiores praesentium adipi</p>
+        </section>
+    </div>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+</body>
+
+</html>

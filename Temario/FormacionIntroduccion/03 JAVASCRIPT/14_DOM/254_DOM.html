@@ -1,0 +1,40 @@
+<!-- Seleccionar y Mostrar el Primer Párrafo:
+
+Enunciado: Selecciona el primer párrafo de un documento HTML 
+y muéstralo por consola. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar y Mostrar el Primer Párrafo</title>
+</head>
+
+<body>
+    <div id="contenedor">
+        
+        <p>Este es el primer párrafo.</p>
+        <p>Este es el segundo párrafo.</p>
+        <p>Este es el tercer párrafo.</p>
+    </div>
+    
+    <script>
+        // Usando querySelector para seleccionar y mostrar el primer párrafo
+        const primerParrafo = document.querySelector('p');
+        console.log(primerParrafo.textContent);
+
+        // Usando querySelectorAll para seleccionar y mostrar el primer párrafo
+        const todosLosParrafos = document.querySelectorAll('p');
+        console.log(todosLosParrafos[0].textContent);
+
+        // Usando querySelector para seleccionar y mostrar el primer párrafo
+        const primerHijo = document.querySelector('#contenedor :first-child');
+        console.log(primerHijo.textContent);
+
+    </script>
+</body>
+
+</html>

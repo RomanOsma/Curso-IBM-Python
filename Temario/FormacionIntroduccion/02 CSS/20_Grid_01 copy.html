@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container {
+            display: grid;
+            background-color: aqua;
+            grid-template-columns: 25% auto 25%;
+            grid-template-rows: 100px 100px 100px;
+            column-gap: 15px;
+            row-gap: 50px;
+
+        }
+
+        .grid-container>div {
+            padding: 10px;
+            font-size: 3.5em;
+            background: linear-gradient(rgb(63, 92, 218), rgb(250, 3, 242));
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Lo primero siempre es tener un contenedor padre con display:grid -->
+    <div class="grid-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

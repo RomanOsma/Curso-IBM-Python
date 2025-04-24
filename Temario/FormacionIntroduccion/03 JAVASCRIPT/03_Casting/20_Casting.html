@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casting</title>
+</head>
+
+<body>
+    <script>
+        // Casting implícito y explícito: Toma un string que represente 
+        // un número decimal y conviértelo en un número con parseFloat. 
+        // Luego, realiza una operación que implique un casting automático 
+        // a string (por ejemplo, al usar el operador + con un string) 
+        // y muestra el tipo del resultado.   
+
+        let decimalString = "3.14";
+        let numeroDecimal = parseFloat(decimalString);
+        let resultado = numeroDecimal + ""; // Casting implícito a string
+        console.log(resultado); // Debería mostrar "3.14" como un string
+        console.log(typeof resultado); // Debería mostrar "string"
+
+    </script>
+</body>
+
+</html>

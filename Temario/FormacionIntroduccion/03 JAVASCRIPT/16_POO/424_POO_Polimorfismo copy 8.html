@@ -1,0 +1,48 @@
+<!-- Implementa un sistema de notificación donde diferentes tipos de notificaciones 
+(por ejemplo, Email, SMS) puedan ser enviadas. 
+Aunque estos objetos sean de diferentes clases, ambos implementan un método enviar(). -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polimorfismo</title>
+
+
+</head>
+
+<body>
+
+    <script>
+        function Email(direccion, mensaje) {
+            this.direccion = direccion;
+            this.mensaje = mensaje;
+            this.enviar = function () {
+                console.log(`Enviando email a ${direccion}: ${mensaje}`);
+            };
+        }
+
+        function SMS(numero, mensaje) {
+            this.numero = numero;
+            this.mensaje = mensaje;
+            this.enviar = function () {
+                console.log(`Enviando SMS a ${numero}: ${mensaje}`);
+            };
+        }
+
+        function enviarNotificacion(notificacion) {
+            if (notificacion.enviar) {
+                notificacion.enviar();
+            } else {
+                console.log("La notificación no se puede enviar");
+            }
+        }
+
+        // Ejemplo de uso
+        enviarNotificacion(new Email("ejemplo@correo.com", "Hola mundo"));
+        enviarNotificacion(new SMS("123456789", "Hola mundo"));
+
+    </script>
+</body>
+
+</html>

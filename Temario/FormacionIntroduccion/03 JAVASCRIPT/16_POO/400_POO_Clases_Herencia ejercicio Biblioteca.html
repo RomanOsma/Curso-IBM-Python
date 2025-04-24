@@ -1,0 +1,192 @@
+<!-- 
+Ejercicio 1: Sistema de Gestión de Biblioteca
+Objetivo: Crear un sistema de gestión para una biblioteca que permita administrar los libros y los usuarios (estudiantes y profesores) que pueden tomar prestados estos libros. Utiliza POO, herencia, condicionales, bucles, el uso de super, y encapsulación para completar este ejercicio.
+
+Clases a Implementar:
+Libro
+
+Propiedades Privadas: titulo, autor, isbn (número de identificación), disponible (booleano para indicar si el libro está disponible para préstamo).
+Métodos: Constructor, getters y setters para cada propiedad, un método prestarLibro() que cambia el estado de disponible a false y otro devolverLibro() que lo cambia a true.
+Persona
+
+Propiedades Privadas: nombre, edad.
+Métodos: Constructor, getters para cada propiedad, y un método mostrarInformacion() que imprime la información de la persona.
+Estudiante (extends Persona)
+
+Propiedades Privadas Adicionales: matricula.
+Métodos: Constructor (no olvides usar super), y sobrescribe mostrarInformacion() para incluir matricula.
+Profesor (extends Persona)
+
+Propiedades Privadas Adicionales: departamento.
+Métodos: Constructor (usa super), y sobrescribe mostrarInformacion() para incluir departamento.
+Funcionalidades Adicionales:
+Implementa una función o método que muestre todos los libros disponibles para préstamo.
+Crea una función o método para asignar un libro a un estudiante o profesor, utilizando condicionales para verificar si el libro está disponible. Si el libro ya está prestado, muestra un mensaje indicando que no está disponible.
+Añade una función o método para recibir un libro devuelto, actualizando su estado a disponible nuevamente. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Herencia</title>
+</head>
+
+<body>
+    <script>
+        // Clase Libro
+        class Libro {
+            #titulo;
+            #autor;
+            #isbn;
+            #disponible;
+
+            constructor(titulo, autor, isbn) {
+                this.#titulo = titulo;
+                this.#autor = autor;
+                this.#isbn = isbn;
+                this.#disponible = true;
+            }
+
+            get titulo() {
+                return this.#titulo;
+            }
+
+            set titulo(nuevoTitulo) {
+                this.#titulo = nuevoTitulo;
+            }
+
+            get autor() {
+                return this.#autor;
+            }
+
+            set autor(nuevoAutor) {
+                this.#autor = nuevoAutor;
+            }
+
+            get isbn() {
+                return this.#isbn;
+            }
+
+            set isbn(nuevoIsbn) {
+                this.#isbn = nuevoIsbn;
+            }
+
+            get disponible() {
+                return this.#disponible;
+            }
+
+            prestarLibro() {
+                if (this.#disponible) {
+                    this.#disponible = false;
+                    console.log(`El libro ${this.#titulo} ha sido prestado.`);
+                } else {
+                    console.log(`El libro ${this.#titulo} no está disponible.`);
+                }
+            }
+
+            devolverLibro() {
+                this.#disponible = true;
+                console.log(`El libro ${this.#titulo} ha sido devuelto.`);
+            }
+        }
+
+        // Clase Persona
+        class Persona {
+            #nombre;
+            #edad;
+
+            constructor(nombre, edad) {
+                this.#nombre = nombre;
+                this.#edad = edad;
+            }
+
+            get nombre() {
+                return this.#nombre;
+            }
+
+            get edad() {
+                return this.#edad;
+            }
+
+            mostrarInformacion() {
+                console.log(`Nombre: ${this.#nombre}, Edad: ${this.#edad}`);
+            }
+        }
+
+        // Clase Estudiante
+        class Estudiante extends Persona {
+            #matricula;
+
+            constructor(nombre, edad, matricula) {
+                super(nombre, edad);
+                this.#matricula = matricula;
+            }
+
+            mostrarInformacion() {
+                super.mostrarInformacion();
+                console.log(`Matrícula: ${this.#matricula}`);
+            }
+        }
+
+        // Clase Profesor
+        class Profesor extends Persona {
+            #departamento;
+
+            constructor(nombre, edad, departamento) {
+                super(nombre, edad);
+                this.#departamento = departamento;
+            }
+
+            mostrarInformacion() {
+                super.mostrarInformacion();
+                console.log(`Departamento: ${this.#departamento}`);
+            }
+        }
+
+        // Funcionalidades adicionales
+        const biblioteca = {
+            libros: [
+                new Libro("El Señor de los Anillos", "J.R.R. Tolkien", "1234567890"),
+                new Libro("1984", "George Orwell", "0987654321")
+            ],
+
+            mostrarLibrosDisponibles() {
+                console.log("Libros disponibles:");
+                this.libros.filter(libro => libro.disponible).forEach(libro => {
+                    console.log(`${libro.titulo} por ${libro.autor}`);
+                });
+            },
+
+            prestarLibro(isbn, persona) {
+                const libro = this.libros.find(libro => libro.isbn === isbn);
+                if (libro && libro.disponible) {
+                    libro.prestarLibro();
+                    console.log(`El libro ${libro.titulo} ha sido prestado a ${persona.nombre}.`);
+                } else {
+                    console.log("El libro solicitado no está disponible.");
+                }
+            },
+
+            devolverLibro(isbn) {
+                const libro = this.libros.find(libro => libro.isbn === isbn);
+                if (libro) {
+                    libro.devolverLibro();
+                }
+            }
+        };
+
+        // Demostración de uso
+        biblioteca.mostrarLibrosDisponibles();
+        const estudiante = new Estudiante("Juan", 20, "202010");
+        const profesor = new Profesor("Ana", 45, "Literatura");
+        biblioteca.prestarLibro("1234567890", estudiante);
+        biblioteca.mostrarLibrosDisponibles();
+        biblioteca.devolverLibro("1234567890");
+        biblioteca.mostrarLibrosDisponibles();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO - Constructores</title>
+</head>
+
+<body>
+    <script>
+        class CuentaBancaria {
+            constructor(titular, numeroCuenta) {
+                this.titular = titular;
+                this.numeroCuenta = numeroCuenta;
+                this.saldo = 0;
+                this.transacciones = [];
+            }
+
+            depositar(monto) {
+                if (monto > 0) {
+                    this.saldo += monto;
+                    this.transacciones.push({ tipo: 'Depósito', monto: monto });
+                    console.log(`Depósito de $${monto} realizado con éxito.`);
+                } else {
+                    console.log('El monto a depositar debe ser mayor que 0.');
+                }
+            }
+
+            retirar(monto) {
+                if (monto <= this.saldo) {
+                    this.saldo -= monto;
+                    this.transacciones.push({ tipo: 'Retiro', monto: monto });
+                    console.log(`Retiro de $${monto} realizado con éxito.`);
+                } else {
+                    console.log('Fondos insuficientes para realizar el retiro.');
+                }
+            }
+
+            obtenerSaldo() {
+                console.log(`El saldo actual es $${this.saldo}.`);
+            }
+
+            mostrarTransacciones() {
+                console.log('Transacciones:');
+                for (const transaccion of this.transacciones) {
+                    console.log(`${transaccion.tipo} de $${transaccion.monto}`);
+                }
+            }
+        }
+
+        // Crear una cuenta bancaria para un usuario
+        const cuentaDeJuan = new CuentaBancaria('Juan Pérez', '123456789');
+
+        // Realizar algunas operaciones
+        cuentaDeJuan.depositar(1000);
+        cuentaDeJuan.retirar(500);
+        cuentaDeJuan.obtenerSaldo();
+        cuentaDeJuan.mostrarTransacciones();
+       
+
+    </script>
+</body>
+
+</html>

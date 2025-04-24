@@ -1,0 +1,52 @@
+<!-- Implementa una clase Contador con un atributo privado que mantenga un conteo. 
+Este contador solo puede incrementarse y nunca disminuir. 
+Implementa un getter para obtener el valor actual del contador y un método 
+incrementar() que incremente el contador. -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getters y Setters</title>
+</head>
+
+<body>
+  <script>
+    class Contador {
+      #conteo;
+
+      constructor() {
+        this.#conteo = 0;
+      }
+
+      get conteo() {
+        return this.#conteo;
+      }
+
+      //Como estoy dentro de la clase puedo modificar el valor de la propiedad privada sin problemas
+      incrementar() {
+        for (let i = 0; i<=10; i++) {
+          console.log(this.#conteo);
+          this.#conteo++;
+        }
+     
+      }
+    }
+
+
+    const miContador = new Contador();
+    console.log(`El valor inicial de conteo es : ${miContador.conteo}`); 
+    miContador.incrementar();
+
+    const miContador2 = new Contador();
+    console.log(`El valor inicial de conteo es : ${miContador2.conteo}`); 
+    miContador2.incrementar();
+
+  </script>
+</body>
+
+</html>

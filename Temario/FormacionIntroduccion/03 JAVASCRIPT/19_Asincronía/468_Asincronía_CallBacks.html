@@ -1,0 +1,41 @@
+<!-- Implementa una función que reciba un valor y una lista de funciones. 
+La función debe ejecutar cada una de las funciones de la lista en orden, 
+pasando el resultado de una como argumento de la siguiente, empezando 
+con el valor inicial. Utiliza un callback para retornar el resultado final. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <script>
+        function aplicarFunciones(valorInicial, funciones, callback) {
+            let resultado = valorInicial;
+
+            funciones.forEach(func => {
+                resultado = func(resultado);
+            });
+
+            callback(resultado);
+        }
+
+        // Uso de la función
+        const funciones = [
+            x => x + 2,
+            x => x * 3,
+            x => x - 1
+        ];
+
+        aplicarFunciones(5, funciones, resultado => {
+            console.log(resultado); // El resultado debe ser 20
+        });
+
+    </script>
+</body>
+
+</html>

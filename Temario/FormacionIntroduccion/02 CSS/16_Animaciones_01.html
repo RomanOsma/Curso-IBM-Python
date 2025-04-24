@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+      position: absolute;
+      top: 0;
+      opacity: 1;
+    }
+
+    @keyframes opacidad{
+      from{
+        opacity: 0;
+      } to{
+        opacity: 1;
+      }
+    }
+
+
+
+    img:hover{
+      opacity: 0;
+      animation-name: opacidad;
+      animation-duration: 2s;
+      animation-iteration-count: 1s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="assets/Imagenes/dragon.png" alt="" width="500px">
+
+</body>
+
+</html>

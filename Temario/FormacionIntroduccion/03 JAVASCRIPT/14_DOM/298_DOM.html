@@ -1,0 +1,26 @@
+<!-- Crea un array de strings en JavaScript. Luego, usa un bucle y .innerHTML 
+para convertir cada string en un elemento de lista (<li>) y añadirlo a un 
+elemento de lista no ordenada (<ul>) en tu HTML. -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h2>Ejercicio 4: Crear una lista de elementos HTML</h2>
+  <ul id="miLista"></ul>
+
+  <script>
+    let frutas = ["Manzana", "Banana", "Cereza"];
+    let lista = document.getElementById("miLista");
+
+    for (i in frutas) {
+      lista.innerHTML += "<li>" + frutas[i] + "</li>";
+    }
+  </script>
+
+</body>
+
+</html>

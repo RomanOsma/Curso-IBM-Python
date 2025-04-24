@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir/eliminar propiedades/métodos</title>
+</head>
+
+<body>
+    <script>
+        // Creación del objeto coche con 3 propiedades y 3 métodos
+        
+        let coche = {
+            marca: 'Toyota',
+            modelo: 'Corolla',
+            año: 2020,
+           
+            arrancar: function () {
+                console.log('El coche ha arrancado');
+            },
+            acelerar: function () {
+                console.log('El coche está acelerando');
+            },
+            frenar: function () {
+                console.log('El coche está frenando');
+            },
+            
+        };
+
+        // Añadir 2 propiedades y 2 métodos más al objeto coche
+        coche.color = 'Rojo';
+        coche.kilometraje = 12000;
+
+        coche.pintar = function (nuevoColor) {
+            this.color = nuevoColor;
+            console.log('El coche ahora es de color ' + this.color);
+        };
+
+        coche.viajar = function (kilometros) {
+            this.kilometraje += kilometros;
+            console.log('El coche ha viajado ' + kilometros + ' kilómetros y ahora tiene ' + this.kilometraje + ' kilómetros');
+        };
+
+        console.log(coche.pintar("negro"));
+  
+        // Eliminar la propiedad 'color'
+        delete coche.color;
+
+        // Eliminar el método 'pintar'
+        // delete coche.pintar;
+
+        console.log(coche.pintar("azul"));
+
+    </script>
+</body>
+
+</html>

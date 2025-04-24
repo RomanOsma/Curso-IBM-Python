@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Vamos a completar el ejercicio anterior:
+//      Escribe un programa en JavaScript que realice las siguientes operaciones:
+//      1.	Pide al usuario que introduzca un número entero.
+//      2.	Comprueba si el número es positivo, negativo o cero.
+//      3.  En caso de que sea positivo o negativo, sacar también si es par o impar.
+//      3.	Imprime el resultado en la consola.
+
+let numero = Number(prompt("Introduzca número: "));
+
+        if(numero>0){
+            if(numero%2 == 0){
+                console.log("El número " + numero + " es positivo y par.");
+            }else{
+                console.log("El número " + numero + " es positivo e impar.");
+            }
+        }else if(numero<0){
+            if(numero%2 == 0){
+                console.log("El número " + numero + " es negativo y par.");
+            }else{
+                console.log("El número " + numero + " es negativo e impar.");
+            }
+        }else{
+            console.log("El número introducido es un cero.");
+        }
+    </script>
+</body>
+
+</html>

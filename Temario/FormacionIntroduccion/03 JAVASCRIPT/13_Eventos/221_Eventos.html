@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, ... ... ... ... initial-scale=1.0">
+    <title>Blur y Change</title>
+</head>
+
+<body>
+    <!-- Blur y Change
+    Enunciado: Muestra un mensaje al salir de un campo de texto y cambia el color del texto al seleccionar una opción de un menú desplegable. -->
+
+    <input type="text" id="textInput" onblur="showMessage()" placeholder="Escribe algo">
+    <select id="colorSelect" onchange="changeTextColor()">
+        <option value="black">Negro</option>
+        <option value="blue">Azul</option>
+        <option value="red">Rojo</option>
+    </select>
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').textContent = '¡Has salido del campo de texto!';
+        }
+
+        function changeTextColor() {
+            let color = document.getElementById('colorSelect').value;
+            document.getElementById('message').style.color = color;
+        }
+    </script>
+</body>
+
+</html>

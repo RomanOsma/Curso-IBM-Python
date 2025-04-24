@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importación con Alias</title>
+</head>
+
+<body>
+    <script type="module">
+
+        // Enunciado: Crear un programa que importe una variable 
+        // otorgándole un alias desde un archivo situado en un 
+        // directorio remoto e imprima el valor de dicha variable.
+
+
+        // Importamos la constante URL_BASE con un alias para evitar conflictos de nombres
+        import { URL_BASE as API_ENDPOINT } from './212_Módulos.js';
+      
+        // Usamos el alias de la constante importada
+        console.log(`El endpoint de la API es: ${API_ENDPOINT}`);
+      </script>
+</body>
+
+</html>

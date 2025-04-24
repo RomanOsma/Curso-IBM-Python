@@ -1,0 +1,71 @@
+<!-- Implementa una clase Temporizador que modele un temporizador con minutos y segundos. 
+Los minutos deben estar entre 0 y 59, y los segundos también. 
+Implementa getters y setters para ambas propiedades. 
+Asegúrate de que, al ajustar los segundos, si el valor excede los 59, se incremente 
+el contador de minutos (y viceversa, si los segundos son ajustados a un valor 
+negativo, se decremente el contador de minutos y se ajusten los segundos a un valor adecuado). -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters y Setters</title>
+</head>
+
+<body>
+    <script>
+        class Temporizador {
+            #minutos;
+            #segundos;
+
+            constructor(minutos, segundos) {
+                this.minutos = minutos;
+                this.segundos = segundos;
+            }
+
+            get minutos() {
+                return this.#minutos;
+            }
+
+            set minutos(valor) {
+                if (valor >= 0 && valor < 60) {
+                    this.#minutos = valor;
+                } else {
+                    console.log("Los minutos deben estar entre 0 y 59.");
+                }
+            }
+
+            get segundos() {
+                return this.#segundos;
+            }
+
+            set segundos(valor) {
+                if (valor >= 60) {
+                    this.#minutos += Math.floor(valor / 60);
+                    this.#segundos = valor % 60;
+                } else if (valor < 0) {
+                    this.#minutos -= 1 + Math.abs(Math.floor(valor / 60));
+                    this.#segundos = 60 + (valor % 60);
+                } else {
+                    this.#segundos = valor;
+                }
+            }
+
+            mostrarTiempo() {
+                return `${this.#minutos} minutos y ${this.#segundos} segundos`;
+            }
+        }
+
+        // Uso
+        const miTemporizador = new Temporizador(0, 0);
+        miTemporizador.segundos = 120;
+        console.log(miTemporizador.mostrarTiempo()); // 2 minutos y 0 segundos
+        miTemporizador.segundos = -30;
+        console.log(miTemporizador.mostrarTiempo()); // 1 minutos y 30 segundos
+
+    </script>
+</body>
+
+</html>
