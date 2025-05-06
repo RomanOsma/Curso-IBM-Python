@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, Hola, soy Angel </h1>
 <h3 align="center">Soy un apasionado de la tecnologia, siempre viendo algo nuevo.</h3>
 
-- 🌱 Programa de Iniciación a la programación: Python Enero-Marzo 2025 | Ibm Skillsbuild
+- 🌱 Programa de Aprendizaje Basado en Proyectos en Inteligencia Artificial - Septiembre 2024 | Ibm Skillsbuild
 - 🌱 IA 325 - Marzo-Mayo 2025 | Ibm Skillsbuild
 
 <h3 align="left">Contacta conmigo:</h3>
